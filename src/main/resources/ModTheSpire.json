@@ -1,0 +1,10 @@
+{
+  "modid": "TheLastKnightMod_omit",
+  "name": "TheLastKnightMod",
+  "author_list": ["Be-omitted"],
+  "description": "以《明日方舟》中最后的骑士为原型的角色mod",
+  "dependencies": ["basemod", "stslib"],
+  "version": "1.0.0",
+  "sts_version": "12-18-2022",
+  "mts_version": "3.30.0"
+}

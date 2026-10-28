@@ -1,0 +1,9 @@
+{
+  "TheLastKnightMod:BreathOfTheTide":{
+    "NAME": "海潮的气息",
+    "FLAVOR": "他闻到了海潮的气味，于是出现在你近旁。你于他而言，没有意义。",
+    "DESCRIPTIONS": [
+      "开始战斗时，获得 #b6 层 #y意志 "
+    ]
+  }
+}
