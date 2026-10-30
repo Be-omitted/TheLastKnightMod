@@ -12,10 +12,15 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.LineagePolicyKernelPower;
 
+/**
+ * 童年的终结
+ * 获得模肢:谱策核，使随机模肢允许更稀有的结果。
+ */
 public class ChildhoodSEnd extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "ChildhoodSEnd";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/ChildhoodSEnd.png";
+    // 费用
     private static final int COST = 2;
 
     public ChildhoodSEnd() {

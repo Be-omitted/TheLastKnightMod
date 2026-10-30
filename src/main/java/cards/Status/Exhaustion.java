@@ -12,9 +12,14 @@ import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import helper.TheLastKnightModHelper;
 
+/**
+ * 力竭
+ * 抽到时临时失去力量的状态牌，虚无且消耗。
+ */
 public class Exhaustion extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Exhaustion";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    // 抽到时临时失去的力量
     private static final int TEMP_STRENGTH_LOSS = 1;
 
     public Exhaustion() {

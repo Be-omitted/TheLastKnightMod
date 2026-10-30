@@ -16,13 +16,22 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 
+/**
+ * 突进
+ * 造成伤害，随机弃牌并向弃牌堆加入灼伤。
+ */
 public class Dash extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Dash";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    // 费用
     private static final int COST = 1;
+    // 基础伤害
     private static final int BASE_DAMAGE = 9;
+    // 升级增加的伤害
     private static final int UPGRADE_DAMAGE = 5;
+    // 丢弃的牌数
     private static final int DISCARD_AMOUNT = 2;
+    // 加入弃牌堆的灼伤张数
     private static final int BURN_AMOUNT = 1;
 
     public Dash() {

@@ -12,16 +12,23 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 慷慨
+ * 消耗金币获得意志。
+ */
 public class Generosity extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Generosity";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Generosity.png";
+    // 费用
     private static final int COST = 0;
     // 获得的意志层数
     private static final int BASE_WILL = 3;
+    // 升级增加的意志层数
     private static final int UPGRADE_WILL = 2;
     // 打出需要消耗的金币
     private static final int BASE_GOLD_COST = 20;
+    // 升级后打出需要消耗的金币
     private static final int UPGRADE_GOLD_COST = 15;
 
     public Generosity() {

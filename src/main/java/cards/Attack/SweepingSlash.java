@@ -14,12 +14,20 @@ import cards.Status.Exhaustion;
 import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 
+/**
+ * 横斩
+ * 对所有敌人造成伤害并向抽牌堆加入力竭。
+ */
 public class SweepingSlash extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "SweepingSlash";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    // 费用
     private static final int COST = 1;
-    private static final int BASE_DAMAGE = 10;
-    private static final int UPGRADE_DAMAGE = 3;
+    // 基础伤害
+    private static final int BASE_DAMAGE = 16;
+    // 升级增加的伤害
+    private static final int UPGRADE_DAMAGE = 5;
+    // 加入抽牌堆的力竭张数
     private static final int EXHAUSTION_AMOUNT = 1;
 
     public SweepingSlash() {

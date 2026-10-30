@@ -13,14 +13,21 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 贞洁
+ * 获得格挡与意志，每次打出后获得的意志层数递减。
+ */
 public class Chastity extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Chastity";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Chastity.png";
+    // 费用
     private static final int COST = 1;
+    // 基础格挡
     private static final int BASE_BLOCK = 10;
     // 获得的意志层数
     private static final int BASE_WILL = 2;
+    // 升级增加的意志层数
     private static final int UPGRADE_WILL = 1;
 
     public Chastity() {

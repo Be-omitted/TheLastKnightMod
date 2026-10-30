@@ -8,6 +8,10 @@ import helper.CardTypeFilter;
 import helper.RandomCardHelper;
 import helper.TheLastKnightModHelper;
 
+/**
+ * 模肢:权变态算核
+ * 回合开始时获得随机模肢，并向指定牌堆加入随机牌。
+ */
 public class ContingentMorphoComputationalKernelPower extends ModULimbBasePower {
     public static final String BASE_ID =
             TheLastKnightModHelper.HEAD_ID + "ContingentMorphoComputationalKernelPower";
@@ -19,7 +23,15 @@ public class ContingentMorphoComputationalKernelPower extends ModULimbBasePower 
     private final CardTypeFilter cardType;
     private final CardRarityFilter cardRarity;
 
-    /* cardType、cardRarity 填入 null 表示不限制，但抽取范围仍限定在三种基础类型/稀有度内 */
+    /**
+     * cardType、cardRarity 填入 null 表示不限制，但抽取范围仍限定在三种基础类型/稀有度内。
+     *
+     * @param limbAmount 层数，同时决定回合开始时获得的随机模肢数量
+     * @param pilePosition 随机牌放入的牌堆
+     * @param cardCount 每次加入的牌数
+     * @param cardType 牌类型筛选器，null 表示不限制
+     * @param cardRarity 稀有度筛选器，null 表示不限制
+     */
     public ContingentMorphoComputationalKernelPower(AbstractCreature owner, int limbAmount,
                                                     RandomCardHelper.PilePosition pilePosition,
                                                     int cardCount, CardTypeFilter cardType,

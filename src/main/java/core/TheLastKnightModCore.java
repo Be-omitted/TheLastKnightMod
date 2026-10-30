@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.Prefs;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -87,6 +88,8 @@ public class TheLastKnightModCore
         this.cardsToAdd.add(new cards.Skill.Generosity());
         this.cardsToAdd.add(new cards.Skill.Temperance());
         this.cardsToAdd.add(new cards.Skill.Chastity());
+        this.cardsToAdd.add(new cards.Skill.StressResponse());
+        this.cardsToAdd.add(new cards.Skill.BurnTheOldSelf());
         // 能力牌
         this.cardsToAdd.add(new cards.Power.PlannedGrowth());
         this.cardsToAdd.add(new cards.Power.DirectedEvolution());
@@ -106,6 +109,9 @@ public class TheLastKnightModCore
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new relics.BreathOfTheTide(), AbstractCardEnum.TheLastKnight_COLOR);
+        BaseMod.addRelicToCustomPool(new relics.AbsurdDestiny(), AbstractCardEnum.TheLastKnight_COLOR);
+        BaseMod.addRelicToCustomPool(new relics.KnightlyBloodAndBone(), AbstractCardEnum.TheLastKnight_COLOR);
+        BaseMod.addRelicToCustomPool(new relics.CodeOfChivalry(), AbstractCardEnum.TheLastKnight_COLOR);
     }
     @Override
     public void receiveAddAudio(){}
@@ -114,6 +120,20 @@ public class TheLastKnightModCore
         this.receiveAddMonster();
         this.receiveAddEvent();
         this.receiveAddAudio();
+
+        // 解锁n20
+        for (AbstractPlayer _p : BaseMod.getModdedCharacters()){
+            if (_p instanceof TheLastKnight){
+                Prefs prefs = _p.getPrefs();
+                if (prefs.getInteger("WIN_COUNT", 0) < 20) {
+                    prefs.putInteger("WIN_COUNT", 20);
+                }
+                prefs.putBoolean(_p.chosenClass.name() + "_WIN", true);
+                prefs.putBoolean("ASCEND_0", true);
+                prefs.putInteger("ASCENSION_LEVEL", 20);
+                prefs.flush();
+            }
+        }
     }
     @Override
     public void receiveEditKeywords() {

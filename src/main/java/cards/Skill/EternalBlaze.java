@@ -13,15 +13,21 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.RedundantVestigePower;
 
+/**
+ * 永燃不休
+ * 获得能量与模肢:冗痕，使用后回到抽牌堆。
+ */
 public class EternalBlaze extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "EternalBlaze";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/EternalBlaze.png";
+    // 费用
     private static final int COST = 0;
     // 获得的能量
     private static final int ENERGY_GAIN = 2;
     // 获得的模肢:冗痕层数
     private static final int BASE_VESTIGE = 4;
+    // 升级降低的冗痕层数
     private static final int UPGRADE_VESTIGE = -1;
 
     public EternalBlaze() {

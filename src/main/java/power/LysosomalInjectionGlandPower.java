@@ -13,12 +13,20 @@ import helper.TheLastKnightModHelper;
 
 import static helper.TheLastKnightModHelper.GetPowerNumber;
 
+/**
+ * 模肢:溶注腺
+ * 打出攻击牌时为攻击目标附加中毒，次数耗尽后获得模肢:冗痕。
+ */
 public class LysosomalInjectionGlandPower extends ModULimbBasePower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID + "LysosomalInjectionGlandPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
     // 每次触发附加的中毒层数
     private final int poisonAmount;
 
+    /**
+     * @param amount 可触发次数
+     * @param poisonAmount 每次触发附加的中毒层数
+     */
     public LysosomalInjectionGlandPower(AbstractCreature owner, int amount, int poisonAmount) {
         super(owner, amount, "LysosomalInjectionGlandPower");
         this.ID = BASE_ID + GetPowerNumber(BASE_ID);

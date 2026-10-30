@@ -8,10 +8,17 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import helper.TheLastKnightModHelper;
 
+/**
+ * 意志
+ * 回合结束时回复层数点生命，并抵消模肢:冗痕的伤害。
+ */
 public class WillPower extends AbstractPower{
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID+"WillPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
 
+    /**
+     * @param amount 意志层数
+     */
     public WillPower(AbstractCreature owner, int amount){
         this.ID = BASE_ID;
         this.name = powerStrings.NAME;

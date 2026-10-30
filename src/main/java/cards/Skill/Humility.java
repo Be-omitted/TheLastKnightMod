@@ -14,13 +14,19 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 谦卑
+ * 不能被打出，被丢弃时抽牌并获得意志。
+ */
 public class Humility extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Humility";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Humility.png";
+    // 无法打出的费用标记
     private static final int COST = -2;
     // 从手牌被丢弃时抽取的牌数
     private static final int DRAW_AMOUNT = 3;
+    // 获得的意志层数
     private static final int BASE_WILL = 2;
 
     public Humility() {
@@ -72,7 +78,9 @@ public class Humility extends Virtue {
         }
     }
 
-    // 把刚被丢弃的这张牌从弃牌堆移到抽牌堆底
+    /**
+     * 把刚被丢弃的这张牌从弃牌堆移到抽牌堆底。
+     */
     private static class MoveToDrawPileBottomAction extends AbstractGameAction {
         private final AbstractCard card;
 

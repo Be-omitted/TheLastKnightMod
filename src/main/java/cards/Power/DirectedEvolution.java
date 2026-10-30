@@ -15,13 +15,19 @@ import helper.CardRarityFilter;
 import helper.CardTypeFilter;
 import power.ContingentMorphoComputationalKernelPower;
 
+/**
+ * 受控进化
+ * 回合开始时获得随机模肢并向手牌加入随机牌。
+ */
 public class DirectedEvolution extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "DirectedEvolution";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/DirectedEvolution.png";
+    // 费用
     private static final int COST = 2;
     // 随机模肢
     private static final int BASE_LIMB = 1;
+    // 升级增加的随机模肢层数
     private static final int UPGRADE_LIMB = 1;
     // 牌数
     private static final int HAND_ADD_AMOUNT = 1;

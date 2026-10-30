@@ -16,13 +16,19 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 勤勉
+ * 获得意志并对敌人多次造成伤害，升级后攻击全体敌人。
+ */
 public class Diligence extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Diligence";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Diligence.png";
+    // 费用
     private static final int COST = 1;
-    // 单次伤害与攻击次数
+    // 单次伤害
     private static final int BASE_DAMAGE = 2;
+    // 攻击次数
     private static final int BASE_HITS = 3;
     // 固定获得的意志层数
     private static final int WILL_GAIN = 1;

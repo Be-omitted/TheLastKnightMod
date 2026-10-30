@@ -12,13 +12,19 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 昭然若揭
+ * 失去意志，获得随机模肢。
+ */
 public class Manifest extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Manifest";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Manifest.png";
+    // 费用
     private static final int COST = 1;
     // 失去的意志层数
     private static final int WILL = 4;
+    // 升级后失去的意志层数
     private static final int UP_WILL = 2;
     // 获得的随机模肢层数
     private static final int BASE_GAIN = 3;

@@ -5,9 +5,16 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import helper.TheLastKnightModHelper;
 
+/**
+ * 模肢:冗痕
+ * 回合结束时失去层数点生命，可与意志的回复互相抵消。
+ */
 public class RedundantVestigePower extends ModULimbBasePower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID+"RedundantVestigePower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
+    /**
+     * @param amount 冗痕层数
+     */
     public RedundantVestigePower(AbstractCreature owner, int amount){
         super(owner, amount, "RedundantVestigePower");
         this.ID = BASE_ID;

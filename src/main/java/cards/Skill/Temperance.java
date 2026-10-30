@@ -12,13 +12,19 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 节制
+ * 本回合每打出其他牌费用提高，打出时获得意志。
+ */
 public class Temperance extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Temperance";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Temperance.png";
+    // 费用
     private static final int COST = 0;
     // 获得的意志层数
     private static final int BASE_WILL = 4;
+    // 升级增加的意志层数
     private static final int UPGRADE_WILL = 2;
 
     public Temperance() {

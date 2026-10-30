@@ -15,9 +15,14 @@ import power.ConsensusSpineLancePower;
 import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 
+/**
+ * 冲锋
+ * 造成伤害并获得模肢:共识棘矛。
+ */
 public class Charge extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID+"Charge";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    // 模肢:共识棘矛加入手牌的晕眩张数
     private static final int DAZE_AMOUNT = 2;
 
     public Charge(){
@@ -38,7 +43,7 @@ public class Charge extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return (AbstractCard)new Charge();
+        return new Charge();
     }
     @Override
     public void upgrade() {

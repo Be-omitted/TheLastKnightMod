@@ -15,6 +15,10 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.TheLastKnightModHelper;
 
+/**
+ * 模肢:共识棘矛
+ * 打出攻击牌时，每层对随机敌人造成伤害并在手牌加入晕眩，同时获得模肢:冗痕。
+ */
 public class ConsensusSpineLancePower extends ModULimbBasePower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID+"ConsensusSpineLancePower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
@@ -24,6 +28,11 @@ public class ConsensusSpineLancePower extends ModULimbBasePower {
     private final int HAmount;
     private final int DAomout;
 
+    /**
+     * @param amount 可触发次数
+     * @param lancedamage 每次触发的伤害
+     * @param daze_amount 每次触发加入手牌的晕眩张数
+     */
     public ConsensusSpineLancePower(AbstractCreature owner, int amount,int lancedamage, int daze_amount){
         super(owner, amount, "ConsensusSpineLancePower");
         this.ID = BASE_ID + lancedamage;

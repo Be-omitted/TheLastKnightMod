@@ -12,11 +12,18 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.RostralPortPower;
 
+/**
+ * 进食本能
+ * 获得模肢:喙口，击杀敌人时回复生命。
+ */
 public class FeedingInstinct extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "FeedingInstinct";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final int BASE_HEAL = 2;
-    private static final int UPGRADE_HEAL = 2;
+    // 击杀回复的基础生命
+    private static final int BASE_HEAL = 5;
+    // 升级增加的生命回复
+    private static final int UPGRADE_HEAL = 3;
+    // 击杀获得的模肢:冗痕层数
     private static final int RVP = 1;
 
     public FeedingInstinct() {

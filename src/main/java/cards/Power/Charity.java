@@ -13,13 +13,19 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 仁爱
+ * 获得意志，并在弃牌堆中加入两张本牌。
+ */
 public class Charity extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Charity";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Charity.png";
+    // 费用
     private static final int COST = 1;
     // 获得的意志层数
     private static final int BASE_WILL = 2;
+    // 升级增加的意志层数
     private static final int UPGRADE_WILL = 2;
 
     public Charity() {

@@ -13,12 +13,20 @@ import helper.TheLastKnightModHelper;
 
 import static helper.TheLastKnightModHelper.GetPowerNumber;
 
+/**
+ * 打出牌时抽牌，耗尽后获得模肢:冗痕
+ */
 public class ContingentMultipotentMetaUnitPower extends ModULimbBasePower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID + "ContingentMultipotentMetaUnitPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
     private final int drawAmount;  // 单次牌数
     private final int VAmount;
 
+    /**
+     * @param amount 使用次数
+     * @param drawAmount 单次抽牌数
+     * @param v_amount 结束后额外冗痕数
+     */
     public ContingentMultipotentMetaUnitPower(AbstractCreature owner, int amount, int drawAmount, int v_amount) {
         super(owner, amount, "ContingentMultipotentMetaUnitPower");
         this.ID = BASE_ID + GetPowerNumber(BASE_ID);
@@ -46,8 +54,7 @@ public class ContingentMultipotentMetaUnitPower extends ModULimbBasePower {
         }
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.drawAmount));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner,
-                new RedundantVestigePower(this.owner, this.VAmount), this.VAmount));
+
         this.amount--;
         this.updateDescription();
         if (this.amount <= 0) {
@@ -55,7 +62,7 @@ public class ContingentMultipotentMetaUnitPower extends ModULimbBasePower {
                     new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
             // 生成自己的
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner,
-                    new RedundantVestigePower(this.owner, 1), 1));
+                    new RedundantVestigePower(this.owner, 1+this.VAmount), 1+this.VAmount));
         }
     }
 

@@ -12,10 +12,15 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 希望
+ * 获得意志并使手牌本回合费用降低。
+ */
 public class Hope extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Hope";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Hope.png";
+    // 费用
     private static final int COST = 2;
     // 获得的意志层数
     private static final int BASE_WILL = 10;
@@ -36,6 +41,7 @@ public class Hope extends Virtue {
         for (AbstractCard card : p.hand.group) {
             if (card != this) {
                 card.setCostForTurn(card.costForTurn - 1);
+                card.upgrade();
             }
         }
     }
@@ -49,7 +55,6 @@ public class Hope extends Virtue {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isEthereal = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

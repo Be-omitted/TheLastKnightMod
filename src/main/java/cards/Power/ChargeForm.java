@@ -12,14 +12,20 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.ChargeFormPower;
 
+/**
+ * 冲锋形态
+ * 每打出一张牌，随机弃牌并抽牌。
+ */
 public class ChargeForm extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "ChargeForm";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/ChargeForm.png";
+    // 费用
     private static final int COST = 3;
     // 单次触发对应的弃牌/抽牌数
     private static final int BASE_AMOUNT = 2;
-    private static final int UPGRADE_AMOUNT = 1;
+    // 升级增加的弃牌/抽牌数
+    private static final int UPGRADE_AMOUNT = 2;
 
     public ChargeForm() {
         super(ID, cardStrings.NAME, IMG, COST, cardStrings.DESCRIPTION,

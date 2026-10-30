@@ -13,6 +13,9 @@ public class LineagePolicyKernelPower extends ModULimbBasePower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID + "LineagePolicyKernelPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
 
+    /**
+     * 创建仅作为开关的谱策核，层数固定为 -1 以隐藏层数显示。
+     */
     public LineagePolicyKernelPower(AbstractCreature owner) {
         // 层数只表示“已获得”，使用 -1 隐藏层数显示
         super(owner, -1, "LineagePolicyKernelPower");

@@ -2,7 +2,6 @@ package cards.Attack;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -15,10 +14,15 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 卡西米尔剑术
+ * 造成等同于意志层数的伤害，升级后附加固定伤害。
+ */
 public class KazimierzSwordsmanship extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "KazimierzSwordsmanship";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/KazimierzSwordsmanship.png";
+    // 费用
     private static final int COST = 1;
 
     public KazimierzSwordsmanship() {
@@ -45,7 +49,7 @@ public class KazimierzSwordsmanship extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(4);
+            this.upgradeDamage(8);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

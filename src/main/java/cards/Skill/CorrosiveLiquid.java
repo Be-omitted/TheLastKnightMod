@@ -12,22 +12,29 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.LysosomalInjectionGlandPower;
 
+/**
+ * 腐蚀液
+ * 获得模肢:溶注腺，攻击时附加中毒。
+ */
 public class CorrosiveLiquid extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "CorrosiveLiquid";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    // 费用
     private static final int COST = 1;
+    // 可触发的次数
     private static final int TRIGGER_TIMES = 3;
+    // 升级增加的中毒层数
+    private static final int Poison_up = 2;
 
     // 中毒层数
     private int Poison;
-    private static final int Poison_up = 2;
 
     public CorrosiveLiquid() {
         super(ID, cardStrings.NAME, "img/card/CorrosiveLiquid.png", COST, cardStrings.DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.TheLastKnight_COLOR, CardRarity.COMMON, CardTarget.SELF);
         this.baseMagicNumber = TRIGGER_TIMES;
         this.magicNumber = this.baseMagicNumber;
-        this.Poison = 2;
+        this.Poison = 4;
         this.updateRawDescription();
     }
 

@@ -12,13 +12,19 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.WillPower;
 
+/**
+ * 耐心
+ * 抽到时降低本场战斗的费用，打出时获得意志。
+ */
 public class Patience extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Patience";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Patience.png";
+    // 费用
     private static final int COST = 10;
     // 获得的意志层数
     private static final int BASE_WILL = 10;
+    // 升级增加的意志层数
     private static final int UPGRADE_WILL = 4;
     // 每次抽到此牌时降低的费用
     private static final int DRAW_COST_REDUCTION = 2;

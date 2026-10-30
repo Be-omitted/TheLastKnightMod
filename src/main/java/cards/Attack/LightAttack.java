@@ -13,12 +13,19 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 
+/**
+ * 轻击
+ * 费用随模肢层数提高的零费攻击牌。
+ */
 public class LightAttack extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "LightAttack";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/LightAttack.png";
+    // 费用
     private static final int COST = 0;
-    private static final int BASE_DAMAGE = 5;
+    // 基础伤害
+    private static final int BASE_DAMAGE = 6;
+    // 升级增加的伤害
     private static final int UPGRADE_DAMAGE = 3;
 
     public LightAttack() {
@@ -35,7 +42,7 @@ public class LightAttack extends CustomCard {
         if (AbstractDungeon.player != null) {
             mul = TheLastKnightModHelper.GetModULimbBasePowerNumber(AbstractDungeon.player);
         }
-        this.setCostForTurn(this.cost + (int)(mul/4));
+        this.setCostForTurn(this.cost + (mul/4));
     }
 
     @Override

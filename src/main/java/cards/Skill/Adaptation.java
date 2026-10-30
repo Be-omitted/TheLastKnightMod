@@ -13,14 +13,20 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.ContingentMultipotentMetaUnitPower;
 
+/**
+ * 适应
+ * 抽牌并获得模肢:权变多能元。
+ */
 public class Adaptation extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Adaptation";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    // 费用
     private static final int COST = 1;
     // 抽牌数
     private static final int DRAW_AMOUNT = 2;
     // 触发次数
     private static final int TRIGGER_TIMES = 2;
+    // 升级增加的触发次数
     private static final int UPGRADE_TRIGGER_TIMES = 1;
 
     public Adaptation() {

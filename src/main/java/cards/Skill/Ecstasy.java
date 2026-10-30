@@ -14,15 +14,21 @@ import helper.RandomCardHelper;
 import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 
+/**
+ * 狂喜
+ * 丢弃手牌并加入随机牌。
+ */
 public class Ecstasy extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Ecstasy";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Ecstasy.png";
+    // 费用
     private static final int COST = 1;
     // 固定丢弃的张数
-    private static final int DISCARD_AMOUNT = 5;
+    private static final int DISCARD_AMOUNT = 4;
     // 加入手牌的随机牌张数
     private static final int BASE_ADD = 2;
+    // 升级增加的随机牌张数
     private static final int UPGRADE_ADD = 1;
 
     public Ecstasy() {

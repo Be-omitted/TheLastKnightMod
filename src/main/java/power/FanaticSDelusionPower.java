@@ -8,10 +8,17 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import helper.TheLastKnightModHelper;
 
+/**
+ * 狂徒妄念
+ * 免死标记：模肢:冗痕的伤害最多将生命扣至 1。
+ */
 public class FanaticSDelusionPower extends AbstractPower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID + "FanaticSDelusionPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
 
+    /**
+     * 创建免死标记，层数固定为 -1 以隐藏层数显示。
+     */
     public FanaticSDelusionPower(AbstractCreature owner) {
         this.ID = BASE_ID;
         this.name = powerStrings.NAME;

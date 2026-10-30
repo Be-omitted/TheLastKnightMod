@@ -13,11 +13,19 @@ import helper.TheLastKnightModHelper;
 
 import static helper.TheLastKnightModHelper.GetPowerNumber;
 
+/**
+ * 模肢:喙口
+ * 击杀敌人时回复生命并获得模肢:冗痕。
+ */
 public class RostralPortPower extends ModULimbBasePower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID + "RostralPortPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
     public int RVP;
 
+    /**
+     * @param amount 每次击杀回复的生命
+     * @param RVP_amount 每次击杀获得的模肢:冗痕层数
+     */
     public RostralPortPower(AbstractCreature owner, int amount, int RVP_amount) {
         super(owner, amount, "RostralPortPower");
         this.RVP = RVP_amount;
@@ -56,11 +64,19 @@ public class RostralPortPower extends ModULimbBasePower {
     public int getMULNumber(){
         return 1;
     }
+    /**
+     * 在当前伤害结算完成后检查目标是否死亡，并触发喙口的回复与冗痕效果。
+     */
     private static class KillTriggerAction extends AbstractGameAction {
         private final RostralPortPower power;
         private final AbstractMonster target;
         private final int healAmount;
 
+        /**
+         * @param power 触发效果的喙口 Power
+         * @param target 本次伤害的目标
+         * @param healAmount 击杀后回复的生命
+         */
         private KillTriggerAction(RostralPortPower power, AbstractMonster target, int healAmount) {
             this.power = power;
             this.target = target;

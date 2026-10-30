@@ -10,6 +10,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 
+/**
+ * 防御
+ * 获得格挡的基础技能牌。
+ */
 public class Defend_TheLastKnight extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID+"Defend_TheLastKnight";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

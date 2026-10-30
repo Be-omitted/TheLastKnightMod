@@ -13,13 +13,19 @@ import pathes.AbstractCardEnum;
 import power.FanaticSDelusionPower;
 import power.WillPower;
 
+/**
+ * 狂徒妄念
+ * 意志达到门槛时可打出，获得免死效果。
+ */
 public class FanaticSDelusion extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "FanaticSDelusion";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/FanaticSDelusion.png";
+    // 费用
     private static final int COST = 2;
     // 打出所需的意志层数
     private static final int BASE_WILL_REQUIREMENT = 30;
+    // 升级降低的意志门槛
     private static final int UPGRADE_WILL_REQUIREMENT = -5;
 
     public FanaticSDelusion() {

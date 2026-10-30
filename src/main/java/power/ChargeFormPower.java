@@ -13,10 +13,17 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import helper.TheLastKnightModHelper;
 
+/**
+ * 冲锋形态
+ * 每打出一张牌，随机弃掉层数张牌并抽层数张牌。
+ */
 public class ChargeFormPower extends AbstractPower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID + "ChargeFormPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
 
+    /**
+     * @param amount 每次触发的弃牌数与抽牌数
+     */
     public ChargeFormPower(AbstractCreature owner, int amount) {
         this.ID = BASE_ID;
         this.name = powerStrings.NAME;

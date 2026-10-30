@@ -13,13 +13,22 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.RedundantVestigePower;
 
+/**
+ * 防御性增生
+ * 获得格挡与模肢:冗痕。
+ */
 public class ReactiveHyperplasia extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "ReactiveHyperplasia";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    // 费用
     private static final int COST = 2;
-    private static final int BASE_BLOCK = 16;
-    private static final int UPGRADE_BLOCK = 5;
-    private static final int VESTIGE_AMOUNT = 2;
+    // 基础格挡
+    private static final int BASE_BLOCK = 21;
+    // 升级增加的格挡
+    private static final int UPGRADE_BLOCK = 9;
+    // 获得的模肢:冗痕层数
+    private static final int VESTIGE_AMOUNT = 3;
+    // 升级增加的冗痕层数
     private static final int UPGRADE_AMOUNT = 1;
 
     public ReactiveHyperplasia() {

@@ -12,13 +12,19 @@ import helper.TheLastKnightModHelper;
 import pathes.AbstractCardEnum;
 import power.MnemonicStackKernelPower;
 
+/**
+ * 计划增长
+ * 每打出一张能力牌获得能量。
+ */
 public class PlannedGrowth extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "PlannedGrowth";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/PlannedGrowth.png";
+    // 费用
     private static final int COST = 2;
     // 能量数
     private static final int BASE_ENERGY = 1;
+    // 升级增加的能量
     private static final int UPGRADE_ENERGY = 1;
 
     public PlannedGrowth() {
