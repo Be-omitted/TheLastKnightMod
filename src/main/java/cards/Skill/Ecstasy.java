@@ -12,7 +12,7 @@ import helper.CardRarityFilter;
 import helper.CardTypeFilter;
 import helper.RandomCardHelper;
 import helper.TheLastKnightModHelper;
-import pathes.AbstractCardEnum;
+import patches.AbstractCardEnum;
 
 /**
  * 狂喜

@@ -1,46 +1,54 @@
 {
   "TheLastKnightMod:WillPower": {
     "NAME": "意志",
-    "DESCRIPTIONS": ["在回合结束时，回复 #g", " 血量，可抵消 模肢:冗痕 的效果"]
+    "DESCRIPTIONS": ["在回合结束时，回复 #g", " 血量，可抵消 模肢:冗痕 的效果。"]
   },
   "TheLastKnightMod:RedundantVestigePower": {
     "NAME": "模肢:冗痕",
-    "DESCRIPTIONS": ["在回合结束时，失去 #r", " 血量"]
+    "DESCRIPTIONS": ["在回合结束时，失去 #r", " 血量。"]
   },
   "TheLastKnightMod:ConsensusSpineLancePower": {
     "NAME": "模肢:共识棘矛",
-    "DESCRIPTIONS": ["下次打出攻击牌时，对随机敌人造成 #r", " 伤害", "，并在手牌加入", "张 *晕眩 "]
+    "DESCRIPTIONS": ["下次打出攻击牌时，对随机敌人造成 #r", " 伤害", "，并在手牌加入", "张 晕眩 。"]
   },
   "TheLastKnightMod:RostralPortPower":{
     "NAME": "模肢:喙口",
-    "DESCRIPTIONS": ["击杀敌人时，获得 #g", " 点生命，获得 #y", " 层 模肢:冗痕 "]
+    "DESCRIPTIONS": ["击杀敌人时，获得 #g", " 点生命，获得 #y", " 层 模肢:冗痕 。"]
   },
   "TheLastKnightMod:LysosomalInjectionGlandPower": {
     "NAME": "模肢:溶注腺",
-    "DESCRIPTIONS": ["下 #y", " 次打出攻击牌时，额外造成 #y", " 层 中毒 "]
+    "DESCRIPTIONS": ["下 #y", " 次打出攻击牌时，额外造成 #y", " 层 中毒 。"]
   },
   "TheLastKnightMod:ContingentMultipotentMetaUnitPower": {
     "NAME": "模肢:权变多能元",
-    "DESCRIPTIONS": ["下", "次出牌时，抽 #g", " 张牌，耗尽时额外获得 #y", " 层 模肢:冗痕 "]
+    "DESCRIPTIONS": ["下", "次出牌时，抽 #g", " 张牌。耗尽时额外获得 #y", " 层 模肢:冗痕 。"]
   },
   "TheLastKnightMod:ContingentMorphoComputationalKernelPower": {
     "NAME": "模肢:权变态算核",
-    "DESCRIPTIONS": ["回合开始时，获得 #y", " 层随机模肢，在", "中加入", "张", "牌"]
+    "DESCRIPTIONS": ["回合开始时，获得 #y", " 层随机模肢，在", "中加入", "张", "牌。"]
   },
   "TheLastKnightMod:MnemonicStackKernelPower": {
   "NAME": "模肢:忆栈核",
-  "DESCRIPTIONS": ["每打出一张 能力 牌，获得 "]
+  "DESCRIPTIONS": ["每打出一张 能力 牌，获得 ", "。"]
   },
   "TheLastKnightMod:ChargeFormPower": {
     "NAME": "冲锋形态",
-    "DESCRIPTIONS": ["每打出一张牌，随机丢弃", "张牌，抽", "张牌"]
+    "DESCRIPTIONS": ["每打出一张牌，随机丢弃", "张牌，抽", "张牌。"]
   },
   "TheLastKnightMod:FanaticSDelusionPower": {
     "NAME": "狂徒妄念",
-    "DESCRIPTIONS": ["不会因为 模肢:冗痕 的伤害而死"]
+    "DESCRIPTIONS": ["不会因为 模肢:冗痕 的伤害而死。"]
   },
   "TheLastKnightMod:LineagePolicyKernelPower": {
     "NAME": "模肢:谱策核",
-    "DESCRIPTIONS": ["随机模肢时，允许更稀有的可能"]
+    "DESCRIPTIONS": ["随机模肢时，允许更稀有的可能。"]
+  },
+  "TheLastKnightMod:ChloroplastPower": {
+    "NAME": "模肢:叶绿体",
+    "DESCRIPTIONS": ["每打出 #y", " 张牌，获得", "。（还需打出 #y", " 张牌）"]
+  },
+  "TheLastKnightMod:HarmonicHubPower": {
+    "NAME": "模肢:谐枢",
+    "DESCRIPTIONS": ["获得 模肢:冗痕 时，获得 #g", " 点 格挡 。"]
   }
 }

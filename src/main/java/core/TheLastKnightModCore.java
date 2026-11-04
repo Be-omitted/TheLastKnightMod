@@ -15,10 +15,9 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import helper.TheLastKnightModHelper;
-import pathes.AbstractCardEnum;
+import patches.AbstractCardEnum;
 import com.badlogic.gdx.graphics.Color;
-import pathes.ThmodClassEnum;
-import power.*;
+import patches.ThmodClassEnum;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -77,6 +76,9 @@ public class TheLastKnightModCore
         this.cardsToAdd.add(new cards.Attack.SweepingSlash());
         this.cardsToAdd.add(new cards.Attack.KazimierzSwordsmanship());
         this.cardsToAdd.add(new cards.Attack.Diligence());
+        this.cardsToAdd.add(new cards.Attack.PerishWithTheEnemy());
+        this.cardsToAdd.add(new cards.Attack.Tempest());
+        this.cardsToAdd.add(new cards.Attack.Combo());
         // 技能牌
         this.cardsToAdd.add(new cards.Skill.ReactiveHyperplasia());
         this.cardsToAdd.add(new cards.Skill.CorrosiveLiquid());
@@ -90,6 +92,15 @@ public class TheLastKnightModCore
         this.cardsToAdd.add(new cards.Skill.Chastity());
         this.cardsToAdd.add(new cards.Skill.StressResponse());
         this.cardsToAdd.add(new cards.Skill.BurnTheOldSelf());
+        this.cardsToAdd.add(new cards.Skill.Curse());
+        this.cardsToAdd.add(new cards.Skill.DeathSentence());
+        this.cardsToAdd.add(new cards.Skill.Lantern());
+        this.cardsToAdd.add(new cards.Skill.HelpingHand());
+        this.cardsToAdd.add(new cards.Skill.Adjustment());
+        this.cardsToAdd.add(new cards.Skill.KnightTraining());
+        this.cardsToAdd.add(new cards.Skill.BecomeFire());
+        this.cardsToAdd.add(new cards.Skill.HeartOfTheLegion());
+        this.cardsToAdd.add(new cards.Skill.BoneCurettage());
         // 能力牌
         this.cardsToAdd.add(new cards.Power.PlannedGrowth());
         this.cardsToAdd.add(new cards.Power.DirectedEvolution());
@@ -99,6 +110,10 @@ public class TheLastKnightModCore
         this.cardsToAdd.add(new cards.Power.Patience());
         this.cardsToAdd.add(new cards.Power.Hope());
         this.cardsToAdd.add(new cards.Power.ChildhoodSEnd());
+        this.cardsToAdd.add(new cards.Power.Photosynthesis());
+        this.cardsToAdd.add(new cards.Power.TheUseOfTheUseless());
+        this.cardsToAdd.add(new cards.Power.WhatConstitutesTheSelf());
+        this.cardsToAdd.add(new cards.Power.DefyDeath());
         // 状态牌
         this.cardsToAdd.add(new cards.Status.Exhaustion());
     }

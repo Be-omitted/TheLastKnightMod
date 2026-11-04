@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.RandomCardHelper;
 import helper.TheLastKnightModHelper;
-import pathes.AbstractCardEnum;
+import patches.AbstractCardEnum;
 import helper.CardRarityFilter;
 import helper.CardTypeFilter;
 import power.ContingentMorphoComputationalKernelPower;

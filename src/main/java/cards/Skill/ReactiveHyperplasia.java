@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.TheLastKnightModHelper;
-import pathes.AbstractCardEnum;
+import patches.AbstractCardEnum;
 import power.RedundantVestigePower;
 
 /**
@@ -23,7 +23,7 @@ public class ReactiveHyperplasia extends CustomCard {
     // 费用
     private static final int COST = 2;
     // 基础格挡
-    private static final int BASE_BLOCK = 21;
+    private static final int BASE_BLOCK = 16;
     // 升级增加的格挡
     private static final int UPGRADE_BLOCK = 9;
     // 获得的模肢:冗痕层数

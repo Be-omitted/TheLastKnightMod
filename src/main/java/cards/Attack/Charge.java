@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import power.ConsensusSpineLancePower;
 import helper.TheLastKnightModHelper;
-import pathes.AbstractCardEnum;
+import patches.AbstractCardEnum;
 
 /**
  * 冲锋

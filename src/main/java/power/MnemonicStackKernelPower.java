@@ -32,7 +32,7 @@ public class MnemonicStackKernelPower extends ModULimbBasePower {
 
     @Override
     public void updateDescription() {
-        this.description = powerStrings.DESCRIPTIONS[0] + Math.max(this.amount, 0);
+        this.description = powerStrings.DESCRIPTIONS[0] + Math.max(this.amount, 0) + powerStrings.DESCRIPTIONS[1];
     }
 
     @Override

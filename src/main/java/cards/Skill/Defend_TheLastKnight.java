@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.TheLastKnightModHelper;
-import pathes.AbstractCardEnum;
+import patches.AbstractCardEnum;
 
 /**
  * 防御
@@ -39,7 +39,7 @@ public class Defend_TheLastKnight extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(3);
+            upgradeBlock(3);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

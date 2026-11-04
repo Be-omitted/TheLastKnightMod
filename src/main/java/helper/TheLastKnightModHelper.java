@@ -83,20 +83,31 @@ public class TheLastKnightModHelper {
         int r = AbstractDungeon.miscRng.random(1, 100);
         if (is_all && isMiddle(r, 1, 30)){
             // 稀有模肢，概率高点给点存在感
-            // 模肢:喙口 击杀敌人时回复生命并获得模肢:冗痕（稀有模肢）
             int nr = AbstractDungeon.miscRng.random(1, 1000);
-            if (isMiddle(nr, 1, 200)){
+            if (isMiddle(nr, 1, 120)){
+                // 模肢:喙口 击杀敌人时回复生命并获得模肢:冗痕（稀有模肢）
                 int cr = AbstractDungeon.miscRng.random(1, 8);
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
                         new RostralPortPower(owner, cr, AbstractDungeon.miscRng.random(1, 4)), cr));
-            }else if (isMiddle(nr, 201, 500)) {
+            }else if (isMiddle(nr, 121, 300)) {
                 // 模肢:权变态算核 回合开始时获得随机模肢并在手牌加入随机牌
                 int amount = 1;
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
                         new ContingentMorphoComputationalKernelPower(owner, amount,
                                 RandomCardHelper.PilePosition.HAND, 1,
                                 CardTypeFilter.any(), CardRarityFilter.any()), amount));
-            } else if (isMiddle(nr, 501, 1000)) {
+            } else if (isMiddle(nr, 301, 600)) {
+                // 模肢:叶绿体 每打出若干张牌获得能量
+                // amount 需与 cardC 相同，表示距离下次获得能量的剩余牌数
+                int cardC = AbstractDungeon.miscRng.random(8, 10);
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
+                        new ChloroplastPower(owner, cardC, cardC, 1), cardC));
+            } else if (isMiddle(nr, 601, 700)) {
+                // 模肢:谐枢 获得模肢:冗痕时获得层数点格挡
+                int amount = AbstractDungeon.miscRng.random(2, 4);
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
+                        new HarmonicHubPower(owner, amount), amount));
+            } else if (isMiddle(nr, 701, 1000)) {
                 // 模肢:忆栈核 每打出一张能力牌获得能量
                 int amount = 1;
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,

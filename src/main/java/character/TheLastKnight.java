@@ -23,8 +23,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import core.TheLastKnightModCore;
-import pathes.ThmodClassEnum;
-import pathes.AbstractCardEnum;
+import patches.ThmodClassEnum;
+import patches.AbstractCardEnum;
 import power.ChargeFormPower;
 import relics.BreathOfTheTide;
 
@@ -35,7 +35,7 @@ import static com.megacrit.cardcrawl.core.CardCrawlGame.psb;
 
 public class TheLastKnight extends CustomPlayer{
     //人物介绍
-    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("TheLastKnightMod:TheLastKnight");;
+    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("TheLastKnightMod:TheLastKnight");
     //初始能量
     private static final int ENERGY_PER_TURN = 3;
     //篝火休息处的角色背影
@@ -62,7 +62,7 @@ public class TheLastKnight extends CustomPlayer{
                 new SpineAnimation("img/char/enemy_2038_sydonq.atlas", "img/char/enemy_2038_sydonq.json", 1.5F));
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
-        initializeClass((String)null, SELES_SHOULDER_2, SELES_SHOULDER_1, (String)null,
+        initializeClass(null, SELES_SHOULDER_2, SELES_SHOULDER_1, null,
                 getLoadout(),
                 0.0F, 0.0F, 200.0F, 220.0F,
                 new EnergyManager(ENERGY_PER_TURN));
@@ -135,7 +135,7 @@ public class TheLastKnight extends CustomPlayer{
         if (hasChargeFormPower()) {
             return;
         }
-        this.state.setAnimation(0, "Attack", false).setTimeScale(2.0F);;
+        this.state.setAnimation(0, "Attack", false).setTimeScale(2.0F);
         this.state.addAnimation(0, "Idle", true, 0.0F);
     }
     @Override

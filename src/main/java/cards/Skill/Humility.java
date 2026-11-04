@@ -1,22 +1,23 @@
 package cards.Skill;
 
 import cards.Virtue;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.MoveCardsAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.TheLastKnightModHelper;
-import pathes.AbstractCardEnum;
+import patches.AbstractCardEnum;
 import power.WillPower;
 
 /**
  * 谦卑
- * 不能被打出，被丢弃时抽牌并获得意志。
+ * 不能被打出，被丢弃或消耗时抽牌并获得意志。
  */
 public class Humility extends Virtue {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Humility";
@@ -51,17 +52,53 @@ public class Humility extends Virtue {
 
     @Override
     public void triggerOnManualDiscard() {
+        if (AbstractDungeon.player == null) {
+            return;
+        }
         // 升级后先把本牌移出弃牌堆，再抽牌，避免抽牌触发洗牌时把自己抽回
         if (this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new MoveToDrawPileBottomAction(this));
+            moveToDrawPileBottom(AbstractDungeon.player.discardPile);
+        }
+        triggerCommonEffect();
+    }
+
+    @Override
+    public void triggerOnExhaust() {
+        if (AbstractDungeon.player == null) {
+            return;
+        }
+
+        // 消耗与丢弃共用的抽牌、获得意志
+        triggerCommonEffect();
+
+        if (!this.upgraded) {
+            return;
+        }
+        // triggerOnExhaust 触发时本牌尚未进入消耗堆，因此把 MoveCardsAction 排到后续行动中
+        moveToDrawPileBottom(AbstractDungeon.player.exhaustPile);
+    }
+
+    // 把本牌从指定牌堆移到抽牌堆底
+    // MoveCardsAction 默认放入抽牌堆顶部，再在回调中移到堆底
+    private void moveToDrawPileBottom(CardGroup source) {
+        AbstractDungeon.actionManager.addToBottom(new MoveCardsAction(
+                AbstractDungeon.player.drawPile,
+                source,
+                card -> card == this,
+                1,
+                cards -> cards.forEach(card -> AbstractDungeon.player.drawPile.moveToBottomOfDeck(card))));
+    }
+
+    // 从手牌被丢弃或消耗时共用的结算
+    private void triggerCommonEffect() {
+        if (AbstractDungeon.player == null) {
+            return;
         }
         AbstractDungeon.actionManager.addToBottom(
                 new DrawCardAction(AbstractDungeon.player, DRAW_AMOUNT));
-        // 被丢弃时获得意志
         AbstractDungeon.actionManager.addToBottom(
                 new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                         new WillPower(AbstractDungeon.player, this.magicNumber), this.magicNumber));
-
     }
 
     @Override
@@ -75,27 +112,6 @@ public class Humility extends Virtue {
             this.upgradeName();
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
-        }
-    }
-
-    /**
-     * 把刚被丢弃的这张牌从弃牌堆移到抽牌堆底。
-     */
-    private static class MoveToDrawPileBottomAction extends AbstractGameAction {
-        private final AbstractCard card;
-
-        private MoveToDrawPileBottomAction(AbstractCard card) {
-            this.card = card;
-            this.actionType = ActionType.CARD_MANIPULATION;
-        }
-
-        @Override
-        public void update() {
-            // 只在牌确实位于弃牌堆时移动，避免重复加入抽牌堆
-            if (AbstractDungeon.player.discardPile.contains(this.card)) {
-                AbstractDungeon.player.discardPile.moveToBottomOfDeck(this.card);
-            }
-            this.isDone = true;
         }
     }
 }

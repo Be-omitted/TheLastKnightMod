@@ -58,8 +58,8 @@
   },
   "TheLastKnightMod:Manifest":{
     "NAME": "昭然若揭",
-    "DESCRIPTION": "失去2层 意志 ， NL 获得 !M! 层随机 模肢 。",
-    "UPGRADE_DESCRIPTION": "失去2层 意志 ， NL 获得 !M! 层随机 模肢 。"
+    "DESCRIPTION": "失去2层 意志 。 NL 获得 !M! 层随机 模肢 。",
+    "UPGRADE_DESCRIPTION": "失去1层 意志 。 NL 获得 !M! 层随机 模肢 。"
   },
   "TheLastKnightMod:KazimierzSwordsmanship": {
     "NAME": "卡西米尔剑术",
@@ -78,13 +78,13 @@
   },
   "TheLastKnightMod:Ecstasy": {
     "NAME": "狂喜",
-    "DESCRIPTION": "丢弃5张牌， NL 增加 !M! 张随机非稀有牌到你的手牌。",
-    "UPGRADE_DESCRIPTION": "丢弃5张牌， NL 增加 !M! 张随机牌到你的手牌。"
+    "DESCRIPTION": "丢弃4张牌， NL 增加 !M! 张随机非稀有牌到你的手牌。",
+    "UPGRADE_DESCRIPTION": "丢弃4张牌， NL 增加 !M! 张随机牌到你的手牌。"
   },
   "TheLastKnightMod:ChargeForm": {
     "NAME": "冲锋形态",
-    "DESCRIPTION": "每打出一张牌，随机丢弃 !M! 张牌，抽 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": "每打出一张牌，随机丢弃 !M! 张牌，抽 !M! 张牌。"
+    "DESCRIPTION": "每打出一张牌， NL 随机丢弃 !M! 张牌，抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "每打出一张牌， NL 随机丢弃 !M! 张牌，抽 !M! 张牌。"
   },
   "TheLastKnightMod:FanaticSDelusion": {
     "NAME": "狂徒妄念",
@@ -98,8 +98,8 @@
   },
   "TheLastKnightMod:Humility": {
     "NAME": "谦卑",
-    "DESCRIPTION": "不能被打出 。 NL 如果这张牌从你的手牌中被丢弃，抽3张牌，获得 !M! 层 意志 。",
-    "UPGRADE_DESCRIPTION": "不能被打出 。 NL 如果这张牌从你的手牌中被丢弃，抽3张牌，获得 !M! 层 意志 ，将这张牌放入你的抽牌堆底。"
+    "DESCRIPTION": "不能被打出 。 NL 如果这张牌从你的手牌中被丢弃或消耗，抽3张牌，获得 !M! 层 意志 。",
+    "UPGRADE_DESCRIPTION": "不能被打出 。 NL 如果这张牌从你的手牌中被丢弃或消耗，抽3张牌，获得 !M! 层 意志 ，将这张牌放入你的抽牌堆底。"
   },
   "TheLastKnightMod:Charity": {
     "NAME": "仁爱",
@@ -148,7 +148,87 @@
   },
   "TheLastKnightMod:BurnTheOldSelf": {
     "NAME": "燃烧旧我",
-    "DESCRIPTION": "消耗2张牌，获得 [E] [E] 。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "消耗2张牌，获得 [E] [E] 。"
+    "DESCRIPTION": "消耗2张牌。 NL 获得 [E] [E] 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "消耗2张牌。 NL 获得 [E] [E] 。"
+  },
+  "TheLastKnightMod:Photosynthesis": {
+    "NAME": "光合作用",
+    "DESCRIPTION": "每打出10张牌，获得 [E] 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 每打出10张牌，获得 [E] 。"
+  },
+  "TheLastKnightMod:Curse": {
+    "NAME": "恶咒",
+    "DESCRIPTION": "给予 !M! 层 易伤 。 NL 给予 !M! 层 虚弱 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "给予 !M! 层 易伤 。 NL 给予 !M! 层 虚弱 。"
+  },
+  "TheLastKnightMod:DeathSentence": {
+    "NAME": "死亡宣告",
+    "DESCRIPTION": "给予所有敌人 !M! 层 易伤 。",
+    "UPGRADE_DESCRIPTION": "给予所有敌人 !M! 层 易伤 。"
+  },
+  "TheLastKnightMod:PerishWithTheEnemy": {
+    "NAME": "与敌同归",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在弃牌堆加入2张 *力竭 ",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 在弃牌堆加入2张 *力竭 "
+  },
+  "TheLastKnightMod:Lantern": {
+    "NAME": "提灯",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 给予所有敌人 !M! 层 虚弱 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL 给予所有敌人 !M! 层 虚弱 。"
+  },
+  "TheLastKnightMod:Tempest": {
+    "NAME": "风暴",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害X次。 NL 获得 !B! 点 格挡 X次。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害X次。 NL 获得 !B! 点 格挡 X次。"
+  },
+  "TheLastKnightMod:HelpingHand": {
+    "NAME": "援助之手",
+    "DESCRIPTION": "回复 !M! 点生命。 NL 获得 !B! 点 格挡 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "回复 !M! 点生命。 NL 获得 !B! 点 格挡 。 NL  消耗 。"
+  },
+  "TheLastKnightMod:TheUseOfTheUseless": {
+    "NAME": "无用之用",
+    "DESCRIPTION": "获得 模肢:冗痕 时， NL 获得 !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得 模肢:冗痕 时， NL 获得 !M! 点 格挡 。"
+  },
+  "TheLastKnightMod:Adjustment": {
+    "NAME": "调整",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 将手牌中的一张牌放到你的抽牌堆顶部。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 将手牌中的一张牌放到你的抽牌堆顶部。"
+  },
+  "TheLastKnightMod:Combo": {
+    "NAME": "连击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在抽牌堆加入1张攻击牌。 NL 抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 在抽牌堆加入1张攻击牌。 NL 抽 !M! 张牌。"
+  },
+  "TheLastKnightMod:KnightTraining": {
+    "NAME": "骑士训练",
+    "DESCRIPTION": "获得 !M! 点力量。 NL 在抽牌堆加入2张随机非稀有牌。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点力量。 NL 在抽牌堆加入2张随机非稀有牌。"
+  },
+  "TheLastKnightMod:BecomeFire": {
+    "NAME": "身化烈火",
+    "DESCRIPTION": "消耗所有手牌。 NL 将等量的随机牌加入手牌。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "消耗所有手牌。 NL 将等量的随机牌加入手牌。"
+  },
+  "TheLastKnightMod:WhatConstitutesTheSelf": {
+    "NAME": "何以为我",
+    "DESCRIPTION": "如果 意志 大于 模肢 数： NL 获得 !M! 层 力量 与 敏捷 。 NL 否则，获得 !M! 随机 模肢 。",
+    "UPGRADE_DESCRIPTION": "如果 意志 大于 模肢 数： NL 获得 !M! 层 力量 与 敏捷 。 NL 否则，获得 !M! 随机 模肢 。"
+  },
+  "TheLastKnightMod:DefyDeath": {
+    "NAME": "拒绝死亡",
+    "DESCRIPTION": "将你血量调整为30%。",
+    "UPGRADE_DESCRIPTION": "将你血量调整为50%。"
+  },
+  "TheLastKnightMod:HeartOfTheLegion": {
+    "NAME": "初生之赐，大群之心",
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] 。 NL 获得 !M! 随机 模肢。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] 。 NL 获得 !M! 随机 模肢。 NL  消耗 。"
+  },
+  "TheLastKnightMod:BoneCurettage": {
+    "NAME": "刮骨",
+    "DESCRIPTION": "失去5点生命。 NL 失去 !M! 层 模肢:冗痕 。",
+    "UPGRADE_DESCRIPTION": "失去5点生命。 NL 失去 !M! 层 模肢:冗痕 。"
   }
 }

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import helper.TheLastKnightModHelper;
-import pathes.AbstractCardEnum;
+import patches.AbstractCardEnum;
 import power.WillPower;
 
 /**
@@ -23,9 +23,9 @@ public class Manifest extends CustomCard {
     // 费用
     private static final int COST = 1;
     // 失去的意志层数
-    private static final int WILL = 4;
+    private static final int WILL = 2;
     // 升级后失去的意志层数
-    private static final int UP_WILL = 2;
+    private static final int UP_WILL = 1;
     // 获得的随机模肢层数
     private static final int BASE_GAIN = 3;
 
