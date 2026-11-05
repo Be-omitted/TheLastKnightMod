@@ -46,8 +46,8 @@ public class TheLastKnight extends CustomPlayer{
     private static final String ORB_VFX = "img/UI/orb/vfx.png";
     private static final float[] LAYER_SPEED = new float[] { -40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F };
     //初始生命，最大生命，初始金币,初始的充能球栏位（机器人）,进阶14时的最大生命值下降
-    private static final int STARTING_HP = 80;
-    private static final int MAX_HP = 80;
+    private static final int STARTING_HP = 85;
+    private static final int MAX_HP = 85;
     private static final int STARTING_GOLD = 99;
     private static final int HAND_SIZE = 0;
     private static final int ASCENSION_MAX_HP_LOSS = 15;
