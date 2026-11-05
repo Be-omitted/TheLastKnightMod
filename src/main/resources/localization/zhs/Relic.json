@@ -3,7 +3,7 @@
     "NAME": "海潮的气息",
     "FLAVOR": "他闻到了海潮的气味，于是出现在你近旁。你于他而言，没有意义。",
     "DESCRIPTIONS": [
-      "开始战斗时，获得 #b6 层 #y意志 。"
+      "开始战斗时，获得 #b6 层 #y意志 。 NL 战斗结束时，额外获得一组卡牌奖励。"
     ]
   },
   "TheLastKnightMod:AbsurdDestiny": {
@@ -17,7 +17,7 @@
     "NAME": "骑士骨血",
     "FLAVOR": "反抗不是毫无代价的。骑士早已遍体鳞伤，但他从不在意。纵使粉身碎骨，他也要抗争到底。",
     "DESCRIPTIONS": [
-      "回合开始时，获得 #b6 层 #y意志 。"
+      "回合开始时，获得 #b6 层 #y意志 。 NL 战斗结束时，额外获得一组卡牌奖励。"
     ]
   },
   "TheLastKnightMod:CodeOfChivalry": {

@@ -34,6 +34,14 @@ public class FanaticSDelusionPower extends AbstractPower {
         this.updateDescription();
     }
 
+    /**
+     * undomod 等按 (owner, amount) 反射重建时使用。
+     * 该 Power 只作为免死标记，层数固定为 -1，忽略传入的 amount。
+     */
+    public FanaticSDelusionPower(AbstractCreature owner, int amount) {
+        this(owner);
+    }
+
     @Override
     public void onInitialApplication() {
         super.onInitialApplication();

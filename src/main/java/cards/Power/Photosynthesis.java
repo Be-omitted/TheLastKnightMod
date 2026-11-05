@@ -16,7 +16,7 @@ public class Photosynthesis extends CustomCard {
     private static final String ID = TheLastKnightModHelper.HEAD_ID + "Photosynthesis";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/Photosynthesis.png";
-    private static final int COST = 2;
+    private static final int COST = 1;
     // 每打出多少张牌触发一次
     private static final int CARDS_PER_TRIGGER = 10;
     // 每次触发的能量数

@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.Prefs;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import helper.PowerHistory;
 import helper.TheLastKnightModHelper;
 import patches.AbstractCardEnum;
 import com.badlogic.gdx.graphics.Color;
@@ -166,11 +167,14 @@ public class TheLastKnightModCore
     }
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-
+        // 开战时再清一次，兜底战斗结束清理晚于 onRemove 压栈的情况
+        PowerHistory.clear();
     }
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
+        // 战斗结束清空 Power 的历史记录，避免跨战斗残留
+        PowerHistory.clear();
         AbstractPlayer p = AbstractDungeon.player;
         if (p == null) return;
 

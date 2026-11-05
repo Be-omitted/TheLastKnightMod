@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import helper.CardRarityFilter;
 import helper.CardTypeFilter;
+import helper.PowerHistory;
 import helper.RandomCardHelper;
 import helper.TheLastKnightModHelper;
 
@@ -16,6 +17,11 @@ public class ContingentMorphoComputationalKernelPower extends ModULimbBasePower 
     public static final String BASE_ID =
             TheLastKnightModHelper.HEAD_ID + "ContingentMorphoComputationalKernelPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
+
+    // History 为空时使用的默认构造参数
+    private static final RandomCardHelper.PilePosition DEFAULT_PILE_POSITION =
+            RandomCardHelper.PilePosition.HAND;
+    private static final int DEFAULT_CARD_COUNT = 1;
 
     // 牌堆位置复用 helper 中的定义
     private final RandomCardHelper.PilePosition pilePosition;
@@ -47,6 +53,37 @@ public class ContingentMorphoComputationalKernelPower extends ModULimbBasePower 
 
         this.type = PowerType.BUFF;
         this.updateDescription();
+    }
+
+    /**
+     * undomod 等按 (owner, amount) 反射重建时使用，额外参数从 History 取。
+     */
+    public ContingentMorphoComputationalKernelPower(AbstractCreature owner, int amount) {
+        this(owner, amount, popHistory());
+    }
+
+    private ContingentMorphoComputationalKernelPower(AbstractCreature owner, int amount, Object[] history) {
+        this(owner, amount,
+                (RandomCardHelper.PilePosition) history[0],
+                (Integer) history[1],
+                (CardTypeFilter) history[2],
+                (CardRarityFilter) history[3]);
+    }
+
+    private static Object[] popHistory() {
+        Object[] data = PowerHistory.pop(ContingentMorphoComputationalKernelPower.class);
+        if (data != null) {
+            return data;
+        }
+        return new Object[]{DEFAULT_PILE_POSITION, DEFAULT_CARD_COUNT,
+                CardTypeFilter.any(), CardRarityFilter.any()};
+    }
+
+    @Override
+    public void onRemove() {
+        PowerHistory.push(ContingentMorphoComputationalKernelPower.class,
+                this.pilePosition, this.cardCount, this.cardType, this.cardRarity);
+        super.onRemove();
     }
 
     @Override

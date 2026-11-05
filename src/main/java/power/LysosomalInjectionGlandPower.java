@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.PoisonPower;
+import helper.PowerHistory;
 import helper.TheLastKnightModHelper;
 
 import static helper.TheLastKnightModHelper.GetPowerNumber;
@@ -20,6 +21,8 @@ import static helper.TheLastKnightModHelper.GetPowerNumber;
 public class LysosomalInjectionGlandPower extends ModULimbBasePower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID + "LysosomalInjectionGlandPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
+    // History 为空时使用的默认中毒层数
+    private static final int DEFAULT_POISON = 1;
     // 每次触发附加的中毒层数
     private final int poisonAmount;
 
@@ -34,6 +37,24 @@ public class LysosomalInjectionGlandPower extends ModULimbBasePower {
         this.poisonAmount = poisonAmount;
         this.type = PowerType.BUFF;
         this.updateDescription();
+    }
+
+    /**
+     * undomod 等按 (owner, amount) 反射重建时使用，额外参数从 History 取。
+     */
+    public LysosomalInjectionGlandPower(AbstractCreature owner, int amount) {
+        this(owner, amount, popPoisonAmount());
+    }
+
+    private static int popPoisonAmount() {
+        Object[] data = PowerHistory.pop(LysosomalInjectionGlandPower.class);
+        return data == null ? DEFAULT_POISON : (Integer) data[0];
+    }
+
+    @Override
+    public void onRemove() {
+        PowerHistory.push(LysosomalInjectionGlandPower.class, this.poisonAmount);
+        super.onRemove();
     }
 
     @Override

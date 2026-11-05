@@ -25,6 +25,14 @@ public class LineagePolicyKernelPower extends ModULimbBasePower {
         this.updateDescription();
     }
 
+    /**
+     * undomod 等按 (owner, amount) 反射重建时使用。
+     * 该 Power 只作为开关，层数固定为 -1，忽略传入的 amount。
+     */
+    public LineagePolicyKernelPower(AbstractCreature owner, int amount) {
+        this(owner);
+    }
+
     @Override
     public void updateDescription() {
         this.description = powerStrings.DESCRIPTIONS[0];

@@ -40,6 +40,12 @@ public class KnightlyBloodAndBone extends CustomRelic {
     }
 
     @Override
+    public void onVictory() {
+        // 战斗结束时额外获得一组卡牌奖励
+        TheLastKnightModHelper.addExtraCardReward();
+    }
+
+    @Override
     public boolean canSpawn() {
         // 只有持有初始遗物时才会作为首领遗物出现
         return AbstractDungeon.player != null

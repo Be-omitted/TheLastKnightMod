@@ -26,7 +26,7 @@ public class Dash extends CustomCard {
     // 费用
     private static final int COST = 1;
     // 基础伤害
-    private static final int BASE_DAMAGE = 9;
+    private static final int BASE_DAMAGE = 14;
     // 升级增加的伤害
     private static final int UPGRADE_DAMAGE = 5;
     // 丢弃的牌数

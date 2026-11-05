@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import helper.PowerHistory;
 import helper.TheLastKnightModHelper;
 
 import static helper.TheLastKnightModHelper.GetPowerNumber;
@@ -20,6 +21,8 @@ import static helper.TheLastKnightModHelper.GetPowerNumber;
 public class RostralPortPower extends ModULimbBasePower {
     public static final String BASE_ID = TheLastKnightModHelper.HEAD_ID + "RostralPortPower";
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
+    // History 为空时使用的默认冗痕层数
+    private static final int DEFAULT_RVP = 1;
     public int RVP;
 
     /**
@@ -33,6 +36,24 @@ public class RostralPortPower extends ModULimbBasePower {
         this.name = powerStrings.NAME;
         this.type = PowerType.BUFF;
         this.updateDescription();
+    }
+
+    /**
+     * undomod 等按 (owner, amount) 反射重建时使用，额外参数从 History 取。
+     */
+    public RostralPortPower(AbstractCreature owner, int amount) {
+        this(owner, amount, popRVP());
+    }
+
+    private static int popRVP() {
+        Object[] data = PowerHistory.pop(RostralPortPower.class);
+        return data == null ? DEFAULT_RVP : (Integer) data[0];
+    }
+
+    @Override
+    public void onRemove() {
+        PowerHistory.push(RostralPortPower.class, this.RVP);
+        super.onRemove();
     }
 
     @Override

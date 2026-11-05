@@ -21,7 +21,7 @@ public class PlannedGrowth extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String IMG = "img/card/PlannedGrowth.png";
     // 费用
-    private static final int COST = 2;
+    private static final int COST = 1;
     // 能量数
     private static final int BASE_ENERGY = 1;
     // 升级增加的能量

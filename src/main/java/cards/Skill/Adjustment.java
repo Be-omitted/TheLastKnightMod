@@ -19,7 +19,7 @@ public class Adjustment extends CustomCard {
     private static final int COST = 1;
     // 抽牌数
     private static final int BASE_DRAW = 3;
-    private static final int UPGRADE_DRAW = 4;
+    private static final int UPGRADE_DRAW = 1;
 
     public Adjustment() {
         super(ID, cardStrings.NAME, IMG, COST, cardStrings.DESCRIPTION,

@@ -24,7 +24,7 @@ public class LightAttack extends CustomCard {
     // 费用
     private static final int COST = 0;
     // 基础伤害
-    private static final int BASE_DAMAGE = 6;
+    private static final int BASE_DAMAGE = 9;
     // 升级增加的伤害
     private static final int UPGRADE_DAMAGE = 3;
 

@@ -24,7 +24,7 @@ public class SweepingSlash extends CustomCard {
     // 费用
     private static final int COST = 1;
     // 基础伤害
-    private static final int BASE_DAMAGE = 16;
+    private static final int BASE_DAMAGE = 14;
     // 升级增加的伤害
     private static final int UPGRADE_DAMAGE = 5;
     // 加入抽牌堆的力竭张数

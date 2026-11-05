@@ -8,6 +8,7 @@ import power.*;
 
 import java.util.TreeMap;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class TheLastKnightModHelper {
     public static final String HEAD_ID = "TheLastKnightMod:";
@@ -163,5 +164,18 @@ public class TheLastKnightModHelper {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner,
                     new ContingentMultipotentMetaUnitPower(owner, amount, draw, vestige), amount));
         }
+    }
+
+    // 战斗结束时额外加入一组卡牌奖励，供拥有对应遗物时调用
+    public static void addExtraCardReward() {
+        AbstractRoom room = AbstractDungeon.getCurrRoom();
+        // 没有房间、奖励被禁用或事件明确不提供卡牌奖励时不添加
+        if (room == null || !room.rewardAllowed) {
+            return;
+        }
+        if (room.event != null && room.event.noCardsInRewards) {
+            return;
+        }
+        room.addCardToRewards();
     }
 }

@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import helper.PowerHistory;
 import helper.TheLastKnightModHelper;
 
 /**
@@ -24,6 +25,10 @@ public class ConsensusSpineLancePower extends ModULimbBasePower {
     public static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(BASE_ID);
     // 触发后变化为 模肢:冗痕 的层数
     public static final int VESTIGE_AMOUNT = 1;
+
+    // History 为空时使用的默认伤害与晕眩张数
+    private static final int DEFAULT_DAMAGE = 1;
+    private static final int DEFAULT_DAZE = 1;
 
     private final int HAmount;
     private final int DAomout;
@@ -43,9 +48,34 @@ public class ConsensusSpineLancePower extends ModULimbBasePower {
         this.updateDescription();
     }
 
+    /**
+     * undomod 等按 (owner, amount) 反射重建时使用，额外参数从 History 取。
+     */
+    public ConsensusSpineLancePower(AbstractCreature owner, int amount) {
+        this(owner, amount, popHistory());
+    }
+
+    private ConsensusSpineLancePower(AbstractCreature owner, int amount, int[] history) {
+        this(owner, amount, history[0], history[1]);
+    }
+
+    private static int[] popHistory() {
+        Object[] data = PowerHistory.pop(ConsensusSpineLancePower.class);
+        if (data == null) {
+            return new int[]{DEFAULT_DAMAGE, DEFAULT_DAZE};
+        }
+        return new int[]{(Integer) data[0], (Integer) data[1]};
+    }
+
+    @Override
+    public void onRemove() {
+        PowerHistory.push(ConsensusSpineLancePower.class, this.HAmount, this.DAomout);
+        super.onRemove();
+    }
+
     @Override
     public void updateDescription() {
-        int lanceDamage = Math.max(this.amount, 0);
+        int lanceDamage = Math.max(this.HAmount, 0);
         this.description = powerStrings.DESCRIPTIONS[0] + lanceDamage + powerStrings.DESCRIPTIONS[1]
                 + powerStrings.DESCRIPTIONS[2] + DAomout + powerStrings.DESCRIPTIONS[3];
     }

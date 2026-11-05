@@ -21,11 +21,11 @@ public class Tempest extends CustomCard {
     // X 费
     private static final int COST = -1;
     // 每次结算对所有敌人造成的伤害
-    private static final int BASE_DAMAGE = 3;
-    private static final int UPGRADE_DAMAGE = 1;
+    private static final int BASE_DAMAGE = 5;
+    private static final int UPGRADE_DAMAGE = 2;
     // 每次结算获得的格挡
-    private static final int BASE_BLOCK = 3;
-    private static final int UPGRADE_BLOCK = 1;
+    private static final int BASE_BLOCK = 5;
+    private static final int UPGRADE_BLOCK = 2;
     private static final String CHEMICAL_X = "Chemical X";
 
     public Tempest() {

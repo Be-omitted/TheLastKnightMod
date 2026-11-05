@@ -49,7 +49,7 @@
   },
   "TheLastKnightMod:Exhaustion": {
     "NAME": "力竭",
-    "DESCRIPTION": "抽到这张牌时本回合临时失去1点 力量 。 NL 消耗 NL 虚无 。"
+    "DESCRIPTION": "抽到这张牌时本回合临时失去1点 力量 。 NL  消耗  NL 虚无 。"
   },
   "TheLastKnightMod:SweepingSlash": {
     "NAME": "横斩",
@@ -138,8 +138,8 @@
   },
   "TheLastKnightMod:ChildhoodSEnd": {
     "NAME": "童年的终结",
-    "DESCRIPTION": "随机模肢时，允许更稀有的可能。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 随机模肢时，允许更稀有的可能。"
+    "DESCRIPTION": "随机 模肢 时，允许更稀有的可能。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 随机 模肢 时，允许更稀有的可能。"
   },
   "TheLastKnightMod:StressResponse": {
     "NAME": "应激反应",
@@ -223,8 +223,8 @@
   },
   "TheLastKnightMod:HeartOfTheLegion": {
     "NAME": "初生之赐，大群之心",
-    "DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] 。 NL 获得 !M! 随机 模肢。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] 。 NL 获得 !M! 随机 模肢。 NL  消耗 。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] 。 NL 获得 !M! 随机 模肢 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL 获得 [E] 。 NL 获得 !M! 随机 模肢 。 NL  消耗 。"
   },
   "TheLastKnightMod:BoneCurettage": {
     "NAME": "刮骨",
