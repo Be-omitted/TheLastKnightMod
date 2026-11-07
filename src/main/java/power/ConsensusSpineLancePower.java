@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
@@ -32,6 +33,8 @@ public class ConsensusSpineLancePower extends ModULimbBasePower {
 
     private final int HAmount;
     private final int DAomout;
+    // 在 onPlayCard 中登记、等待卡牌动作结束后再结算的次数
+    private int pendingUses;
 
     /**
      * @param amount 可触发次数
@@ -82,10 +85,23 @@ public class ConsensusSpineLancePower extends ModULimbBasePower {
 
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
-        // 只有打出攻击牌时才会触发
+        // 只在打出攻击牌时登记，实际结算推迟到卡牌动作执行完成之后
         if (card == null || card.type != AbstractCard.CardType.ATTACK) {
             return;
         }
+        if (this.amount <= 0 || AbstractDungeon.getMonsters() == null) {
+            return;
+        }
+        this.pendingUses++;
+    }
+
+    @Override
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        // 只结算本张牌在 onPlayCard 中登记过的触发，卡牌自身获得的模肢不会立刻生效
+        if (this.pendingUses <= 0) {
+            return;
+        }
+        this.pendingUses--;
         if (this.amount <= 0 || AbstractDungeon.getMonsters() == null) {
             return;
         }

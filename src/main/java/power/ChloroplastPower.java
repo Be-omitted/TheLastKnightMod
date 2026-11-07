@@ -1,6 +1,7 @@
 package power;
 
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -26,6 +27,8 @@ public class ChloroplastPower extends ModULimbBasePower {
     private final int cardc;
     // 能量数
     private final int ec;
+    // 在 onPlayCard 中登记、等待卡牌动作结束后再计数的次数
+    private int pendingUses;
 
     /**
      * @param amount 应与cardC相同
@@ -83,6 +86,20 @@ public class ChloroplastPower extends ModULimbBasePower {
     @Override
     public void onPlayCard(AbstractCard card, AbstractMonster m) {
         if (card == null || this.amount <= 0) {
+            return;
+        }
+        // 登记本张牌，等卡牌动作执行完成后再计数
+        this.pendingUses++;
+    }
+
+    @Override
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        // 只结算本张牌在 onPlayCard 中登记过的触发
+        if (this.pendingUses <= 0) {
+            return;
+        }
+        this.pendingUses--;
+        if (this.amount <= 0) {
             return;
         }
 
