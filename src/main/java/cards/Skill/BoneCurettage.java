@@ -25,11 +25,11 @@ public class BoneCurettage extends CustomCard {
     // 费用
     private static final int COST = 0;
     // 失去的生命值
-    private static final int HP_LOSS = 3;
+    private static final int HP_LOSS = 5;
     // 清除的模肢:冗痕层数
-    private static final int BASE_REMOVE = 6;
+    private static final int BASE_REMOVE = 10;
     // 升级增加的清除层数
-    private static final int UPGRADE_REMOVE = 3;
+    private static final int UPGRADE_REMOVE = 5;
 
     public BoneCurettage() {
         super(ID, cardStrings.NAME, IMG, COST, cardStrings.DESCRIPTION,
