@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.Prefs;
 import com.megacrit.cardcrawl.localization.*;
@@ -43,8 +44,8 @@ public class TheLastKnightModCore
     }
     @Override
     public void receiveEditStrings(){
-        // 暂只支持中文
-        String lang = "zhs";
+        // 中文使用 zhs，其余语言回退到英文
+        String lang = getLocalizationLanguage();
 
         BaseMod.loadCustomStringsFile(CardStrings.class, "localization/" + lang + "/Card.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/" + lang + "/Power.json");
@@ -153,10 +154,16 @@ public class TheLastKnightModCore
     }
     @Override
     public void receiveEditKeywords() {
-        // 暂只支持中文
-        String lang = "zhs";
+        // 按游戏语言选择关键词文件：中文使用 zhs，其余语言使用 eng
+        String lang = getLocalizationLanguage();
+        String keywordPath = "localization/" + lang + "/KeywordStrings.json";
+        // 目标语言文件不存在时回退到中文，避免读取不存在的文件导致启动失败
+        if (!Gdx.files.internal(keywordPath).exists()) {
+            keywordPath = "localization/zhs/KeywordStrings.json";
+        }
+
         Gson gson = new Gson();
-        String json = Gdx.files.internal("localization/" + lang + "/KeywordStrings.json")
+        String json = Gdx.files.internal(keywordPath)
                 .readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
         if (keywords != null) {
@@ -164,6 +171,15 @@ public class TheLastKnightModCore
                 BaseMod.addKeyword(keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    // 简体/繁体中文使用 zhs 本地化，其余语言使用 eng
+    private static String getLocalizationLanguage() {
+        if (Settings.language == Settings.GameLanguage.ZHS
+                || Settings.language == Settings.GameLanguage.ZHT) {
+            return "zhs";
+        }
+        return "eng";
     }
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {

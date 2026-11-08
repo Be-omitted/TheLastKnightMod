@@ -1,0 +1,54 @@
+{
+  "TheLastKnightMod:WillPower": {
+    "NAME": "Will",
+    "DESCRIPTIONS": ["At the end of combat, heal #g", " HP, offsetting #yMod Limb: Redundant Vestige."]
+  },
+  "TheLastKnightMod:RedundantVestigePower": {
+    "NAME": "Mod Limb: Redundant Vestige",
+    "DESCRIPTIONS": ["At the end of combat, lose #r", " HP."]
+  },
+  "TheLastKnightMod:ConsensusSpineLancePower": {
+    "NAME": "Mod Limb: Consensus Spine Lance",
+    "DESCRIPTIONS": ["The next time you play an Attack, deal #r", " damage to a random enemy", ", and add ", " *Dazed to your hand."]
+  },
+  "TheLastKnightMod:RostralPortPower": {
+    "NAME": "Mod Limb: Rostral Port",
+    "DESCRIPTIONS": ["Whenever you kill an enemy, heal #g", " HP and gain #y", " Mod Limb: Redundant Vestige."]
+  },
+  "TheLastKnightMod:LysosomalInjectionGlandPower": {
+    "NAME": "Mod Limb: Lysosomal Injection Gland",
+    "DESCRIPTIONS": ["The next #y", " Attack cards you play apply #y", " Poison."]
+  },
+  "TheLastKnightMod:ContingentMultipotentMetaUnitPower": {
+    "NAME": "Mod Limb: Contingent Multipotent Meta-Unit",
+    "DESCRIPTIONS": ["The next ", " times you play a card, draw #g", " cards. When it runs out, gain #y", " Mod Limb: Redundant Vestige."]
+  },
+  "TheLastKnightMod:ContingentMorphoComputationalKernelPower": {
+    "NAME": "Mod Limb: Contingent Morpho-Computational Kernel",
+    "DESCRIPTIONS": ["At the start of your turn, gain #y", " random Mod Limb. Add to your ", " ", " ", " card."]
+  },
+  "TheLastKnightMod:MnemonicStackKernelPower": {
+    "NAME": "Mod Limb: Mnemonic Stack Kernel",
+    "DESCRIPTIONS": ["Whenever you play a Power card, gain ", " [E]."]
+  },
+  "TheLastKnightMod:ChargeFormPower": {
+    "NAME": "Charge Form",
+    "DESCRIPTIONS": ["Whenever you play a card, randomly discard ", " cards and draw ", " cards."]
+  },
+  "TheLastKnightMod:FanaticSDelusionPower": {
+    "NAME": "Fanatic's Delusion",
+    "DESCRIPTIONS": ["You cannot die from #yMod Limb: Redundant Vestige damage."]
+  },
+  "TheLastKnightMod:LineagePolicyKernelPower": {
+    "NAME": "Mod Limb: Lineage Policy Kernel",
+    "DESCRIPTIONS": ["Random Mod Limbs can roll rarer results."]
+  },
+  "TheLastKnightMod:ChloroplastPower": {
+    "NAME": "Mod Limb: Chloroplast",
+    "DESCRIPTIONS": ["Every #y", " cards you play, gain", ". (Cards until next trigger: #y", ")"]
+  },
+  "TheLastKnightMod:HarmonicHubPower": {
+    "NAME": "Mod Limb: Harmonic Hub",
+    "DESCRIPTIONS": ["Whenever you gain #yMod Limb: Redundant Vestige, gain #g", " Block."]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "TheLastKnightMod:BreathOfTheTide": {
+    "NAME": "Breath of the Tide",
+    "FLAVOR": "He caught the scent of the tide and appeared at your side. To him, you mean nothing.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b6 #yWill. NL At the end of combat, gain an additional card reward."
+    ]
+  },
+  "TheLastKnightMod:AbsurdDestiny": {
+    "NAME": "Absurd Destiny",
+    "FLAVOR": "In Kazimierz, his name was on every tongue. His descendants built a company on his image, and everything he defended with his life became coins in their purses.",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #y999 Gold."
+    ]
+  },
+  "TheLastKnightMod:KnightlyBloodAndBone": {
+    "NAME": "Knightly Blood and Bone",
+    "FLAVOR": "Resistance is never without cost. The knight was already covered in wounds, but he never cared. Even if his body were broken to pieces, he would fight to the end.",
+    "DESCRIPTIONS": [
+      "At the start of each turn, gain #b6 #yWill. NL At the end of combat, gain an additional card reward."
+    ]
+  },
+  "TheLastKnightMod:CodeOfChivalry": {
+    "NAME": "Code of Chivalry",
+    "FLAVOR": "Solemn oaths are a thing of the past. Modern chivalry calls for a more flexible approach. Enter your number into the comms device, and you are a proud knight.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain [E] for every 100 Gold you have."
+    ]
+  }
+}

@@ -75,7 +75,7 @@ public class ChloroplastPower extends ModULimbBasePower {
     public void updateDescription() {
         StringBuilder e = new StringBuilder();
         for (int i=0;i<this.ec;i++){
-            e.append(" [E] ");
+            e.append(" [E]");
         }
         this.description = powerStrings.DESCRIPTIONS[0] + Math.max(this.cardc, 0)
                 + powerStrings.DESCRIPTIONS[1] + e

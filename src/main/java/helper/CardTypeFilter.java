@@ -1,6 +1,7 @@
 package helper;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 
 import java.util.EnumSet;
 
@@ -89,13 +90,19 @@ public final class CardTypeFilter {
     }
 
     /**
-     * 生成用于 Power 描述的中文片段（不含末尾的“牌”字）。
+     * 生成用于 Power 描述的类型片段（不含末尾的“牌”字）。
      * <p>
-     * 一种类型时返回类型名，如“攻击”；
-     * 两种类型时返回“非XX”，如“非能力”；
-     * 三种类型时返回“随机”。
+     * 中文返回“攻击”“非能力”“随机”等；英文返回“Attack”“non-Power”“random”等。
      */
     public String getDisplayName() {
+        if (Settings.language == Settings.GameLanguage.ZHS
+                || Settings.language == Settings.GameLanguage.ZHT) {
+            return getDisplayNameZh();
+        }
+        return getDisplayNameEn();
+    }
+
+    private String getDisplayNameZh() {
         // 三种全选等价于不限制，沿用原来的“随机”描述
         if (this.isAny()) {
             return "随机";
@@ -115,6 +122,21 @@ public final class CardTypeFilter {
         }
         // 理论上是不可达分支，作为兜底仍然返回“随机”
         return "随机";
+    }
+
+    private String getDisplayNameEn() {
+        if (this.isAny()) {
+            return "random";
+        }
+        if (this.allowedTypes.size() == 1) {
+            return getCardTypeName_en(this.allowedTypes.iterator().next());
+        }
+        for (AbstractCard.CardType type : ALL_TYPES) {
+            if (!this.allowedTypes.contains(type)) {
+                return "non-" + getCardTypeName_en(type);
+            }
+        }
+        return "random";
     }
 
     // 判断传入的牌类型是否属于本筛选器支持的三种类型
@@ -155,6 +177,24 @@ public final class CardTypeFilter {
                 return "诅咒";
             default:
                 return "随机";
+        }
+    }
+
+    private static String getCardTypeName_en(AbstractCard.CardType type) {
+        if (type == null) return "random";
+        switch (type) {
+            case ATTACK:
+                return "Attack";
+            case SKILL:
+                return "Skill";
+            case POWER:
+                return "Power";
+            case STATUS:
+                return "Status";
+            case CURSE:
+                return "Curse";
+            default:
+                return "random";
         }
     }
 }

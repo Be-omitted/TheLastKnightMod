@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -34,7 +35,8 @@ public class Humility extends Virtue {
         super(ID, cardStrings.NAME, IMG, COST, cardStrings.DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.TheLastKnight_COLOR, CardRarity.UNCOMMON, CardTarget.NONE);
         // 尝试打出时显示的原因
-        this.cantUseMessage = "不能被打出";
+        this.cantUseMessage = (Settings.language == Settings.GameLanguage.ZHS
+                || Settings.language == Settings.GameLanguage.ZHT) ? "不能被打出" : "Cannot be played.";
 
         this.baseMagicNumber = BASE_WILL;
         this.magicNumber = this.baseMagicNumber;

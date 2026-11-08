@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
@@ -21,16 +22,27 @@ public final class RandomCardHelper {
     // 牌堆位置
     public enum PilePosition {
         // 抽牌堆
-        DRAW_PILE("抽牌堆"),
+        DRAW_PILE("抽牌堆", "draw pile"),
         // 弃牌堆
-        DISCARD_PILE("弃牌堆"),
+        DISCARD_PILE("弃牌堆", "discard pile"),
         // 手牌
-        HAND("手牌");
+        HAND("手牌", "hand");
 
         public final String displayName;
+        private final String displayNameEn;
 
-        PilePosition(String displayName) {
+        PilePosition(String displayName, String displayNameEn) {
             this.displayName = displayName;
+            this.displayNameEn = displayNameEn;
+        }
+
+        // 中文使用中文牌堆名，其它语言使用英文牌堆名
+        public String getDisplayName() {
+            if (Settings.language == Settings.GameLanguage.ZHS
+                    || Settings.language == Settings.GameLanguage.ZHT) {
+                return this.displayName;
+            }
+            return this.displayNameEn;
         }
     }
 

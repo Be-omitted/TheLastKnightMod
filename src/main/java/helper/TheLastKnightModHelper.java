@@ -3,6 +3,7 @@ package helper;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import power.*;
 
@@ -33,15 +34,25 @@ public class TheLastKnightModHelper {
         return HAmount;
     }
     public static String GetWillHText(AbstractCreature creature){
+        boolean chinese = Settings.language == Settings.GameLanguage.ZHS
+                || Settings.language == Settings.GameLanguage.ZHT;
         if (creature instanceof AbstractPlayer){
             int h = GetWillH((AbstractPlayer) creature);
-            if (h>=0){
-                return "(将会回复 #g" + (h) + " 点血量！)";
+            if (chinese){
+                if (h>=0){
+                    return "(将会回复 #g" + (h) + " 点血量！)";
+                }else{
+                    return "(将会失去 #r" + (-h) + " 点血量！)";
+                }
             }else{
-                return "(将会失去 #r" + (-h) + " 点血量！)";
+                if (h>=0){
+                    return " (Will heal #g" + (h) + " HP!)";
+                }else{
+                    return " (Will lose #r" + (-h) + " HP!)";
+                }
             }
         }else{
-            return "(在其它单位上时无效！)";
+            return chinese ? "(在其它单位上时无效！)" : " (No effect on other creatures!)";
         }
     }
     // 获取模肢数

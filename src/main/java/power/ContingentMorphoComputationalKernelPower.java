@@ -2,6 +2,7 @@ package power;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import helper.CardRarityFilter;
 import helper.CardTypeFilter;
@@ -90,37 +91,52 @@ public class ContingentMorphoComputationalKernelPower extends ModULimbBasePower 
     public void updateDescription() {
         // 描述开头：当前层数，负数按 0 显示，避免出现负层数
         this.description = powerStrings.DESCRIPTIONS[0] + Math.max(this.amount, 0)
-                + powerStrings.DESCRIPTIONS[1] + this.pilePosition.displayName
+                + powerStrings.DESCRIPTIONS[1] + this.pilePosition.getDisplayName()
                 + powerStrings.DESCRIPTIONS[2] + this.cardCount
                 + powerStrings.DESCRIPTIONS[3]
                 + getCardFilterDescription()
                 + powerStrings.DESCRIPTIONS[4];
     }
 
-    // 把稀有度筛选器与类型筛选器的描述拼成一段自然的中文
+    // 把稀有度筛选器与类型筛选器的描述拼成一段自然的文本
     private String getCardFilterDescription() {
         // 取稀有度部分，例如“普通”“非稀有”“随机”
         String rarityText = this.cardRarity.getDisplayName();
         // 取类型部分，例如“攻击”“非能力”“随机”
         String typeText = this.cardType.getDisplayName();
-        // 两边都不限制时只输出一个“随机”，避免出现“随机随机”
-        if (this.cardRarity.isAny() && this.cardType.isAny()) {
-            return "随机";
+        boolean chinese = Settings.language == Settings.GameLanguage.ZHS
+                || Settings.language == Settings.GameLanguage.ZHT;
+        if (chinese) {
+            // 两边都不限制时只输出一个“随机”，避免出现“随机随机”
+            if (this.cardRarity.isAny() && this.cardType.isAny()) {
+                return "随机";
+            }
+            // 只限制类型时，省略稀有度部分
+            if (this.cardRarity.isAny()) {
+                return typeText;
+            }
+            // 只限制稀有度时，省略类型部分
+            if (this.cardType.isAny()) {
+                return rarityText;
+            }
+            // 两边都是“非XX”时用“且”连接，例如“非稀有且非能力”
+            if (rarityText.startsWith("非") && typeText.startsWith("非")) {
+                return rarityText + "且" + typeText;
+            }
+            // 其余情况沿用原顺序：稀有度在前、类型在后，例如“普通攻击”
+            return rarityText + typeText;
         }
-        // 只限制类型时，省略稀有度部分
+
+        if (this.cardRarity.isAny() && this.cardType.isAny()) {
+            return "random";
+        }
         if (this.cardRarity.isAny()) {
             return typeText;
         }
-        // 只限制稀有度时，省略类型部分
         if (this.cardType.isAny()) {
             return rarityText;
         }
-        // 两边都是“非XX”时用“且”连接，例如“非稀有且非能力”
-        if (rarityText.startsWith("非") && typeText.startsWith("非")) {
-            return rarityText + "且" + typeText;
-        }
-        // 其余情况沿用原顺序：稀有度在前、类型在后，例如“普通攻击”
-        return rarityText + typeText;
+        return rarityText + " " + typeText;
     }
 
     @Override

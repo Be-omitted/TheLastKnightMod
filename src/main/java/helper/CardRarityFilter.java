@@ -1,6 +1,7 @@
 package helper;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 
 import java.util.EnumSet;
 
@@ -81,13 +82,19 @@ public final class CardRarityFilter {
     }
 
     /**
-     * 生成用于 Power 描述的中文片段（不含末尾的“牌”字）。
+     * 生成用于 Power 描述的稀有度片段（不含末尾的“牌”字）。
      * <p>
-     * 一种稀有度时返回名称，如“普通”；
-     * 两种稀有度时返回“非XX”，如“非稀有”；
-     * 三种稀有度时返回“随机”。
+     * 中文返回“普通”“非稀有”“随机”等；英文返回“Common”“non-Rare”“random”等。
      */
     public String getDisplayName() {
+        if (Settings.language == Settings.GameLanguage.ZHS
+                || Settings.language == Settings.GameLanguage.ZHT) {
+            return getDisplayNameZh();
+        }
+        return getDisplayNameEn();
+    }
+
+    private String getDisplayNameZh() {
         // 三种全选等价于不限制，沿用原来的“随机”描述
         if (this.isAny()) {
             return "随机";
@@ -107,6 +114,21 @@ public final class CardRarityFilter {
         }
         // 理论上是不可达分支，作为兜底仍然返回“随机”
         return "随机";
+    }
+
+    private String getDisplayNameEn() {
+        if (this.isAny()) {
+            return "random";
+        }
+        if (this.allowedRarities.size() == 1) {
+            return getCardRarityName_en(this.allowedRarities.iterator().next());
+        }
+        for (AbstractCard.CardRarity rarity : ALL_RARITIES) {
+            if (!this.allowedRarities.contains(rarity)) {
+                return "non-" + getCardRarityName_en(rarity);
+            }
+        }
+        return "random";
     }
 
     // 判断传入的稀有度是否属于本筛选器支持的三种稀有度
@@ -148,6 +170,26 @@ public final class CardRarityFilter {
                 return "诅咒";
             default:
                 return "随机";
+        }
+    }
+
+    private static String getCardRarityName_en(AbstractCard.CardRarity rarity) {
+        if (rarity == null) return "random";
+        switch (rarity) {
+            case BASIC:
+                return "Basic";
+            case COMMON:
+                return "Common";
+            case UNCOMMON:
+                return "Uncommon";
+            case RARE:
+                return "Rare";
+            case SPECIAL:
+                return "Special";
+            case CURSE:
+                return "Curse";
+            default:
+                return "random";
         }
     }
 }

@@ -1,0 +1,20 @@
+[
+  {
+    "NAMES": [
+      "Will"
+    ],
+    "DESCRIPTION": "For each stack of #yWill, heal #g1 HP at the end of combat. Offsets #yMod Limb: Redundant Vestige."
+  },
+  {
+    "NAMES": [
+      "Mod Limb"
+    ],
+    "DESCRIPTION": "Triggers an additional effect under certain conditions, then becomes #yMod Limb: Redundant Vestige."
+  },
+  {
+    "NAMES": [
+      "Mod Limb: Redundant Vestige"
+    ],
+    "DESCRIPTION": "For each stack of #yMod Limb: Redundant Vestige, lose #r1 HP at the end of combat."
+  }
+]

@@ -1,0 +1,234 @@
+{
+  "TheLastKnightMod:Strike_TheLastKnight": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage."
+  },
+  "TheLastKnightMod:Defend_TheLastKnight": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block."
+  },
+  "TheLastKnightMod:Charge": {
+    "NAME": "Charge",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Mod Limb: NL The next time you play an Attack, deal ",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! Mod Limb: NL The next time you play an Attack, deal ",
+    "EXTENDED_DESCRIPTION": ["9", " damage to a random enemy and add 2 *Dazed to your hand."]
+  },
+  "TheLastKnightMod:FeedingInstinct": {
+    "NAME": "Feeding Instinct",
+    "DESCRIPTION": "Gain a Mod Limb: NL Whenever you kill an enemy, NL heal !M! HP and gain 1 Mod Limb: Redundant Vestige.",
+    "UPGRADE_DESCRIPTION": "Gain a Mod Limb: NL Whenever you kill an enemy, NL heal !M! HP and gain 1 Mod Limb: Redundant Vestige."
+  },
+  "TheLastKnightMod:LightAttack": {
+    "NAME": "Light Attack",
+    "DESCRIPTION": "For every 4 Mod Limbs you have, this costs [E] more. NL Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "For every 4 Mod Limbs you have, this costs [E] more. NL Deal !D! damage."
+  },
+  "TheLastKnightMod:ReactiveHyperplasia": {
+    "NAME": "Reactive Hyperplasia",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Mod Limb: Redundant Vestige.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Mod Limb: Redundant Vestige."
+  },
+  "TheLastKnightMod:CorrosiveLiquid": {
+    "NAME": "Corrosive Liquid",
+    "DESCRIPTION": "Gain a Mod Limb: NL The next !M! Attack cards you play apply ",
+    "UPGRADE_DESCRIPTION": "Gain a Mod Limb: NL The next !M! Attack cards you play apply ",
+    "EXTENDED_DESCRIPTION": [" Poison."]
+  },
+  "TheLastKnightMod:Dash": {
+    "NAME": "Dash",
+    "DESCRIPTION": "Deal !D! damage. NL Discard 2 cards at random and add a *Burn to your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Discard 2 cards and add a *Burn to your discard pile."
+  },
+  "TheLastKnightMod:Adaptation": {
+    "NAME": "Adaptation",
+    "DESCRIPTION": "Draw 2 cards. NL Gain a Mod Limb: NL The next ",
+    "UPGRADE_DESCRIPTION": "Draw 2 cards. NL Gain a Mod Limb: NL The next ",
+    "EXTENDED_DESCRIPTION": [" times you play a card, NL draw ", " cards. When it runs out, gain 1 Mod Limb: Redundant Vestige.", " NL Exhaust."]
+  },
+  "TheLastKnightMod:Exhaustion": {
+    "NAME": "Exhaustion",
+    "DESCRIPTION": "When drawn, lose 1 Strength this turn. NL Exhaust. NL Ethereal."
+  },
+  "TheLastKnightMod:SweepingSlash": {
+    "NAME": "Sweeping Slash",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Put an *Exhaustion on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL Put an *Exhaustion on top of your draw pile."
+  },
+  "TheLastKnightMod:Manifest": {
+    "NAME": "Manifest",
+    "DESCRIPTION": "Lose 2 Will. NL Gain !M! random Mod Limb.",
+    "UPGRADE_DESCRIPTION": "Lose 1 Will. NL Gain !M! random Mod Limb."
+  },
+  "TheLastKnightMod:KazimierzSwordsmanship": {
+    "NAME": "Kazimierz Swordsmanship",
+    "DESCRIPTION": "Deal damage equal to your Will.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to your Will plus !D!."
+  },
+  "TheLastKnightMod:DirectedEvolution": {
+    "NAME": "Directed Evolution",
+    "DESCRIPTION": "At the start of your turn, NL gain !M! random Mod Limb and add 1 random Common card to your hand.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, NL gain !M! random Mod Limb and add 1 random non-Rare card to your hand."
+  },
+  "TheLastKnightMod:PlannedGrowth": {
+    "NAME": "Planned Growth",
+    "DESCRIPTION": "Whenever you play a Power card, gain [E].",
+    "UPGRADE_DESCRIPTION": "Whenever you play a Power card, gain [E] [E]."
+  },
+  "TheLastKnightMod:Ecstasy": {
+    "NAME": "Ecstasy",
+    "DESCRIPTION": "Discard 4 cards. NL Add !M! random non-Rare cards to your hand.",
+    "UPGRADE_DESCRIPTION": "Discard 4 cards. NL Add !M! random cards to your hand."
+  },
+  "TheLastKnightMod:ChargeForm": {
+    "NAME": "Charge Form",
+    "DESCRIPTION": "Whenever you play a card, NL randomly discard !M! cards and draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a card, NL randomly discard !M! cards and draw !M! cards."
+  },
+  "TheLastKnightMod:FanaticSDelusion": {
+    "NAME": "Fanatic's Delusion",
+    "DESCRIPTION": "Can only be played if you have at least !M! Will. NL You cannot die from Mod Limb: Redundant Vestige damage. NL Retain.",
+    "UPGRADE_DESCRIPTION": "Can only be played if you have at least !M! Will. NL You cannot die from Mod Limb: Redundant Vestige damage. NL Retain."
+  },
+  "TheLastKnightMod:EternalBlaze": {
+    "NAME": "Eternal Blaze",
+    "DESCRIPTION": "Gain [E] [E]. NL Gain !M! Mod Limb: Redundant Vestige. NL Put this card into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E]. NL Gain !M! Mod Limb: Redundant Vestige. NL Put this card into your draw pile."
+  },
+  "TheLastKnightMod:Humility": {
+    "NAME": "Humility",
+    "DESCRIPTION": "Cannot be played. NL If this card is discarded or Exhausted from your hand, draw 3 cards and gain !M! Will.",
+    "UPGRADE_DESCRIPTION": "Cannot be played. NL If this card is discarded or Exhausted from your hand, draw 3 cards, gain !M! Will, and put this card on the bottom of your draw pile."
+  },
+  "TheLastKnightMod:Charity": {
+    "NAME": "Charity",
+    "DESCRIPTION": "Gain !M! Will. NL Put 2 copies of Charity into your discard pile.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Will. NL Put 2 copies of Charity+ into your discard pile."
+  },
+  "TheLastKnightMod:Patience": {
+    "NAME": "Patience",
+    "DESCRIPTION": "Whenever you draw this card, it costs [E] [E] less. NL Gain !M! Will.",
+    "UPGRADE_DESCRIPTION": "Whenever you draw this card, it costs [E] [E] less. NL Gain !M! Will."
+  },
+  "TheLastKnightMod:Diligence": {
+    "NAME": "Diligence",
+    "DESCRIPTION": "Gain 1 Will. NL Deal !D! damage !M! times.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Will. NL Deal !D! damage to ALL enemies !M! times."
+  },
+  "TheLastKnightMod:Generosity": {
+    "NAME": "Generosity",
+    "DESCRIPTION": "Lose 20 Gold. NL Gain !M! Will.",
+    "UPGRADE_DESCRIPTION": "Lose 15 Gold. NL Gain !M! Will."
+  },
+  "TheLastKnightMod:Temperance": {
+    "NAME": "Temperance",
+    "DESCRIPTION": "This turn, whenever you play another card, this costs [E] more. NL Gain !M! Will.",
+    "UPGRADE_DESCRIPTION": "This turn, whenever you play another card, this costs [E] more. NL Gain !M! Will."
+  },
+  "TheLastKnightMod:Chastity": {
+    "NAME": "Chastity",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Will. NL Each time this is played, gain 1 less Will.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Gain !M! Will. NL Each time this is played, gain 1 less Will."
+  },
+  "TheLastKnightMod:Hope": {
+    "NAME": "Hope",
+    "DESCRIPTION": "Gain !M! Will. NL All cards in your hand cost [E] less this turn. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Will. NL All cards in your hand cost [E] less this turn and are upgraded. NL Ethereal."
+  },
+  "TheLastKnightMod:ChildhoodSEnd": {
+    "NAME": "Childhood's End",
+    "DESCRIPTION": "Random Mod Limbs can roll rarer results.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Random Mod Limbs can roll rarer results."
+  },
+  "TheLastKnightMod:StressResponse": {
+    "NAME": "Stress Response",
+    "DESCRIPTION": "For each Mod Limb you have, gain !B! Block and !M! temporary Thorns.",
+    "UPGRADE_DESCRIPTION": "For each Mod Limb you have, gain !B! Block and !M! temporary Thorns."
+  },
+  "TheLastKnightMod:BurnTheOldSelf": {
+    "NAME": "Burn the Old Self",
+    "DESCRIPTION": "Exhaust 2 cards. NL Gain [E] [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust 2 cards. NL Gain [E] [E]."
+  },
+  "TheLastKnightMod:Photosynthesis": {
+    "NAME": "Photosynthesis",
+    "DESCRIPTION": "Every 10 cards you play, gain [E].",
+    "UPGRADE_DESCRIPTION": "Innate. NL Every 10 cards you play, gain [E]."
+  },
+  "TheLastKnightMod:Curse": {
+    "NAME": "Malediction",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Apply !M! Weak. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable. NL Apply !M! Weak."
+  },
+  "TheLastKnightMod:DeathSentence": {
+    "NAME": "Death Sentence",
+    "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to ALL enemies."
+  },
+  "TheLastKnightMod:PerishWithTheEnemy": {
+    "NAME": "Perish Together",
+    "DESCRIPTION": "Deal !D! damage. NL Add 2 *Exhaustion to your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 2 *Exhaustion to your discard pile."
+  },
+  "TheLastKnightMod:Lantern": {
+    "NAME": "Lantern",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak to ALL enemies."
+  },
+  "TheLastKnightMod:Tempest": {
+    "NAME": "Tempest",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies X times. NL Gain !B! Block X times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies X times. NL Gain !B! Block X times."
+  },
+  "TheLastKnightMod:HelpingHand": {
+    "NAME": "Helping Hand",
+    "DESCRIPTION": "Heal !M! HP. NL Gain !B! Block. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Heal !M! HP. NL Gain !B! Block. NL Exhaust."
+  },
+  "TheLastKnightMod:TheUseOfTheUseless": {
+    "NAME": "The Use of the Useless",
+    "DESCRIPTION": "Whenever you gain Mod Limb: Redundant Vestige, NL gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Whenever you gain Mod Limb: Redundant Vestige, NL gain !M! Block."
+  },
+  "TheLastKnightMod:Adjustment": {
+    "NAME": "Adjustment",
+    "DESCRIPTION": "Draw !M! cards. NL Put a card from your hand on top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Put a card from your hand on top of your draw pile."
+  },
+  "TheLastKnightMod:Combo": {
+    "NAME": "Combo",
+    "DESCRIPTION": "Deal !D! damage. NL Add a random Attack card to your draw pile. NL Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a random Attack card to your draw pile. NL Draw !M! cards."
+  },
+  "TheLastKnightMod:KnightTraining": {
+    "NAME": "Knight Training",
+    "DESCRIPTION": "Gain !M! Strength. NL Add 2 random non-Rare cards to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Strength. NL Add 2 random non-Rare cards to your draw pile."
+  },
+  "TheLastKnightMod:BecomeFire": {
+    "NAME": "Become Fire",
+    "DESCRIPTION": "Exhaust all cards in your hand. NL Add the same number of random cards to your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust all cards in your hand. NL Add the same number of random cards to your hand."
+  },
+  "TheLastKnightMod:WhatConstitutesTheSelf": {
+    "NAME": "What Am I?",
+    "DESCRIPTION": "If your Will is greater than your Mod Limb count: NL Gain !M! Strength and Dexterity. NL Otherwise, gain !M! random Mod Limb.",
+    "UPGRADE_DESCRIPTION": "If your Will is greater than your Mod Limb count: NL Gain !M! Strength and Dexterity. NL Otherwise, gain !M! random Mod Limb."
+  },
+  "TheLastKnightMod:DefyDeath": {
+    "NAME": "Defy Death",
+    "DESCRIPTION": "Set your HP to 30% of your Max HP.",
+    "UPGRADE_DESCRIPTION": "Set your HP to 50% of your Max HP."
+  },
+  "TheLastKnightMod:HeartOfTheLegion": {
+    "NAME": "Heart of the Legion",
+    "DESCRIPTION": "Draw !M! cards. NL Gain [E]. NL Gain !M! random Mod Limb. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Gain [E]. NL Gain !M! random Mod Limb. NL Exhaust."
+  },
+  "TheLastKnightMod:BoneCurettage": {
+    "NAME": "Bone Curettage",
+    "DESCRIPTION": "Lose 5 HP. NL Lose !M! Mod Limb: Redundant Vestige.",
+    "UPGRADE_DESCRIPTION": "Lose 5 HP. NL Lose !M! Mod Limb: Redundant Vestige."
+  }
+}

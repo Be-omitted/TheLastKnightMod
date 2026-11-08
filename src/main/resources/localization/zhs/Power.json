@@ -1,11 +1,11 @@
 {
   "TheLastKnightMod:WillPower": {
     "NAME": "意志",
-    "DESCRIPTIONS": ["在回合结束时，回复 #g", " 血量，可抵消 模肢:冗痕 的效果。"]
+    "DESCRIPTIONS": ["在战斗结束时，回复 #g", " 血量，可抵消 模肢:冗痕 的效果。"]
   },
   "TheLastKnightMod:RedundantVestigePower": {
     "NAME": "模肢:冗痕",
-    "DESCRIPTIONS": ["在回合结束时，失去 #r", " 血量。"]
+    "DESCRIPTIONS": ["在战斗结束时，失去 #r", " 血量。"]
   },
   "TheLastKnightMod:ConsensusSpineLancePower": {
     "NAME": "模肢:共识棘矛",
